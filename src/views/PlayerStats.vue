@@ -1,168 +1,103 @@
 <template>
-  <div class="player-stats">
-    <h1>{{ stats.nickname }}님의 전적 분석</h1>
-
-    <div v-if="loading" class="loading">
-      로딩 중...
-    </div>
-
-    <div v-else>
-      <div class="stats-container">
-        <div class="basic-stats card">
-          <h2>기본 통계</h2>
-          <p><strong>유저 고유 번호:</strong> {{ stats.userNum }}</p>
-          <p><strong>시즌 ID:</strong> {{ stats.seasonId }}</p>
-          <p><strong>MMR:</strong> {{ stats.mmr }}</p>
-          <p><strong>순위:</strong> {{ stats.rank }} / {{ stats.rankSize }} (상위 {{ stats.rankPercent }}%)</p>
-          <p><strong>총 게임 수:</strong> {{ stats.totalGames }}</p>
-          <p><strong>총 승리 수:</strong> {{ stats.totalWins }}</p>
-          <p><strong>팀의 총 킬 수:</strong> {{ stats.totalTeamKills }}</p>
-          <p><strong>평균 순위:</strong> {{ stats.averageRank }}</p>
-          <p><strong>평균 킬 수:</strong> {{ stats.averageKills }}</p>
-          <p><strong>평균 어시스트 수:</strong> {{ stats.averageAssistants }}</p>
-          <p><strong>평균 사냥 수:</strong> {{ stats.averageHunts }}</p>
-        </div>
-
-        <div class="top-rank-stats card">
-          <h2>상위 랭크 달성 비율</h2>
-          <p><strong>Top 1 달성:</strong> {{ stats.top1 * 100 }}%</p>
-          <p><strong>Top 2 달성:</strong> {{ stats.top2 * 100 }}%</p>
-          <p><strong>Top 3 달성:</strong> {{ stats.top3 * 100 }}%</p>
-          <p><strong>Top 5 달성:</strong> {{ stats.top5 * 100 }}%</p>
-          <p><strong>Top 7 달성:</strong> {{ stats.top7 * 100 }}%</p>
-        </div>
-
-        <div class="character-stats card">
-          <h2>캐릭터 통계</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>캐릭터 코드</th>
-                <th>캐릭터 이름</th>
-                <th>사용 수</th>
-                <th>최대 킬 수</th>
-                <th>Top 3 수</th>
-                <th>승리 수</th>
-                <th>Top 3 비율</th>
-                <th>평균 순위</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="charStat in stats.characterStats" :key="charStat.characterCode">
-                <td>{{ charStat.characterCode }}</td>
-                <td>{{ l10n_korean["Character/Name/"+charStat.characterCode] }}</td>
-                <td>{{ charStat.usages }}</td>
-                <td>{{ charStat.maxKillings }}</td>
-                <td>{{ charStat.top3 }}</td>
-                <td>{{ charStat.wins }}</td>
-                <td>{{ charStat.top3Rate }}%</td>
-                <td>{{ charStat.averageRank }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+  <div class="content">
+    <img
+        class="rank-image"
+        alt="Rank image group"
+        src="https://c.animaapp.com/SjFnLgAk/img/rank-image-group.png"
+    />
+    <div class="blur-layer" />
+    <div class="player-header"/>
+    <img class="character-image" alt="Character image" src="https://c.animaapp.com/SjFnLgAk/img/----.png"/>
+    <div class="player-header-cover"/>
+    <!--        <ButtonWrapper />-->
+            <Info />
+    <!--        <Left />-->
+    <!--        <Right />-->
   </div>
 </template>
 
 <script>
-import test_d from "@/assets/test.json"
-import l10n_korean from "@/assets/l10n-Korean-20240705012554.json"
+import ButtonWrapper from "@/views/PlayerStats/sections/ButtonWrapper.vue";
+import Info from "@/views/PlayerStats/sections/Info.vue";
+import Left from "@/views/PlayerStats/sections/Left.vue";
+import Right from "@/views/PlayerStats/sections/Right.vue";
 
 export default {
-  name: 'PlayerStats',
-  data() {
-    return {
-      stats: {},
-      loading: true,
-      l10n_korean: l10n_korean
-    }
+  name: "MacbookProWhite",
+  components: {
+    ButtonWrapper,
+    Info,
+    Left,
+    Right,
   },
-  created() {
-    this.fetchPlayerStats()
-  },
-  methods: {
-    async fetchPlayerStats() {
-      try {
-        // const playerId = this.$route.params.player_id
-        // const response = await fetch(`/api/player-stats/${playerId}`)
-        // const data = await response.json()
-        // this.stats = data
-        this.stats = test_d
-      } catch (error) {
-        console.error('Error fetching player stats:', error)
-      } finally {
-        this.loading = false
-      }
-    }
-  }
-}
+};
 </script>
 
-<style scoped>
-.player-stats {
-  padding: 20px;
-  text-align: center;
-  background-color: #f9f9f9;
-}
 
-.loading {
-  font-size: 1.5em;
-  color: #42b983;
-}
-
-.stats-container {
+<style>
+.content {
+  background-color: #6c6c6c;
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
-  gap: 20px;
-}
-
-.card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 10px;
   width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
+  height: 100%;
 }
 
-.card h2 {
-  margin-top: 0;
-  color: #333;
+
+.content .rank-image {
+  top:0;
+  left:0;
+  width: 57.5vw;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(90%) /*blur(1px)*/;
+  position: absolute;
 }
 
-.card p {
-  margin: 10px 0;
-  color: #555;
+.content .character-image {
+  top:0;
+  right:0;
+  width: 75vw;
+  height: auto;
+  object-fit: cover;
+  position: absolute;
 }
 
-.card strong {
-  color: #333;
-}
-
-.character-stats table {
+.content .blur-layer {
+  position: absolute;
+  background-color: #d9d9d94c;
+  height: 100%;
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
 }
 
-.character-stats th, .character-stats td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
+.content .player-header {
+  width: 67.5vw;
+  height: 60vh;
+  position: absolute;
+  margin-top:15vh;
+  background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgb(255, 255, 255) 61.5%,
+      rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: 15px;
+  box-shadow: 0px 0px 4px 1px #00000040;
 }
 
-.character-stats th {
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-.character-stats td {
-  background-color: #fff;
-  color: #555;
+.content .player-header-cover {
+  width: 38vw;
+  height: 60vh;
+  margin-top:15vh;
+  position: absolute;
+  background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(255, 255, 255) 37.5%,
+      rgb(255, 255, 255) 65.5%,
+      rgba(255, 255, 255, 0) 100%
+  );
 }
 </style>
