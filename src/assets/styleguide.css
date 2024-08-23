@@ -1,0 +1,97 @@
+:root {
+  --color-background-brand-default: var(--color-primitives-brand-800);
+  --color-background-brand-hover: var(--color-primitives-brand-900);
+  --color-border-brand-default: var(--color-primitives-brand-800);
+  --color-border-neutral-tertiary: var(--color-primitives-slate-400);
+  --color-primitives-brand-100: rgba(245, 245, 245, 1);
+  --color-primitives-brand-300: rgba(217, 217, 217, 1);
+  --color-primitives-brand-800: rgba(44, 44, 44, 1);
+  --color-primitives-brand-900: rgba(30, 30, 30, 1);
+  --color-primitives-slate-100: rgba(243, 243, 243, 1);
+  --color-primitives-slate-1000: rgba(36, 36, 36, 1);
+  --color-primitives-slate-400: rgba(178, 178, 178, 1);
+  --color-primitives-slate-600: rgba(118, 118, 118, 1);
+  --color-text-brand-on-brand: var(--color-primitives-brand-100);
+  --color-text-neutral-on-neutral: var(--color-primitives-slate-100);
+  --heading-font-family: "Inter", Helvetica;
+  --heading-font-size: 24px;
+  --heading-font-style: normal;
+  --heading-font-weight: 600;
+  --heading-letter-spacing: -0.48px;
+  --heading-line-height: 120.00000476837158%;
+  --single-line-body-base-font-family: "Inter", Helvetica;
+  --single-line-body-base-font-size: 16px;
+  --single-line-body-base-font-style: normal;
+  --single-line-body-base-font-weight: 400;
+  --single-line-body-base-letter-spacing: 0px;
+  --single-line-body-base-line-height: 100%;
+  --size-radius-200: 8px;
+  --size-space-200: 8px;
+  --size-space-300: 12px;
+  --title-hero-font-family: "Inter", Helvetica;
+  --title-hero-font-size: 72px;
+  --title-hero-font-style: normal;
+  --title-hero-font-weight: 700;
+  --title-hero-letter-spacing: -2.16px;
+  --title-hero-line-height: 120.00000476837158%;
+  --vibrant-labelsvibrant-primary: rgba(0, 0, 0, 1);
+}
+
+:root {
+    --noto-sans-kr-font-family: "Noto Sans KR", sans-serif;
+
+    /* Inter 폰트의 weight 가중치 */
+    --inter-font-weight-regular: 400;
+    --inter-font-weight-medium: 500;
+    --inter-font-weight-semi-bold: 600;
+    --inter-font-weight-bold: 700;
+
+    /* Noto Sans KR 폰트의 weight 가중치 */
+    --noto-sans-kr-font-weight-light: 300;
+    --noto-sans-kr-font-weight-regular: 400;
+    --noto-sans-kr-font-weight-medium: 500;
+    --noto-sans-kr-font-weight-bold: 700;
+
+    --noto-sans-kr-font-style-light: normal;
+    --noto-sans-kr-font-style-regular: 400;
+    --noto-sans-kr-font-style-medium: 500;
+    --noto-sans-kr-font-style-bold: 700;
+
+    /* Colors */
+    --black: rgba(0,0,0,1);
+    --white: rgba(255,255,255,1);
+    --gray-line-color: rgba(88, 88, 88, 0.2);
+
+    /* radius */
+    --block-radius: 15;
+}
+
+/*
+
+To enable a theme in your HTML, simply add one of the following data attributes to an HTML element, like so:
+
+<body data-color-mode="SDS-light">
+    <!-- the rest of your content -->
+</body>
+
+You can apply the theme on any DOM node, not just the `body`
+
+*/
+
+[data-color-mode="SDS-light"] {
+  --color-background-brand-default: var(--color-primitives-brand-800);
+  --color-background-brand-hover: var(--color-primitives-brand-900);
+  --color-border-brand-default: var(--color-primitives-brand-800);
+  --color-border-neutral-tertiary: var(--color-primitives-slate-400);
+  --color-text-brand-on-brand: var(--color-primitives-brand-100);
+  --color-text-neutral-on-neutral: var(--color-primitives-slate-100);
+}
+
+[data-color-mode="SDS-dark"] {
+  --color-background-brand-default: var(--color-primitives-brand-100);
+  --color-background-brand-hover: var(--color-primitives-brand-300);
+  --color-border-brand-default: var(--color-primitives-brand-100);
+  --color-border-neutral-tertiary: var(--color-primitives-slate-600);
+  --color-text-brand-on-brand: var(--color-primitives-brand-900);
+  --color-text-neutral-on-neutral: var(--color-primitives-slate-1000);
+}
