@@ -12,6 +12,7 @@
     "chart.js": "^4.4.4",
     "chartjs-adapter-date-fns": "^3.0.0",
     "chartjs-chart-financial": "^0.2.1",
+    "circle-progress.vue": "^3.2.1",
     "date-fns": "^3.6.0",
     "vue": "^3.4.29",
     "vue-chartjs": "^5.3.1",

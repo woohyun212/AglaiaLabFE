@@ -1,18 +1,20 @@
 <template>
   <div class="right">
     <MatchTypeTab />
-    <Element1 />
+    <div class="recent-match-stats">
+      <MatchHistoryStats />
 <!--    <Element2 />-->
 <!--    <Element3 />-->
 <!--    <Element4 />-->
 <!--    <Element5 />-->
 <!--    <View6 />-->
+    </div>
   </div>
 </template>
 
 <script>
 import MatchTypeTab from "./Right/sections/MatchTypeTab.vue";
-import Element1 from "./Right/sections/Element1.vue";
+import MatchHistoryStats from "./Right/sections/RecentMatchHistoryStats.vue";
 import Element2 from "./Right/sections/Element2.vue";
 import Element3 from "./Right/sections/Element3.vue";
 import Element4 from "./Right/sections/Element4.vue";
@@ -23,7 +25,7 @@ export default {
   name: "Right",
   components: {
     MatchTypeTab,
-    Element1,
+    MatchHistoryStats,
     Element2,
     Element3,
     Element4,
@@ -41,5 +43,13 @@ export default {
   box-shadow: 0px 0px 4px 2px #00000040;
   width: 71.2%;
   height: 100%;
+}
+
+.recent-match-stats {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 2%;
 }
 </style>
