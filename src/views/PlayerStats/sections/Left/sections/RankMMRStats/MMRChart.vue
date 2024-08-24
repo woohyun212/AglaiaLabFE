@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="chart-base">
     <canvas ref="candleChart"></canvas>
   </div>
 <!--  <button @click="changeSetting(chart)">보튼</button>-->
@@ -28,12 +28,13 @@ export default {
           datasets: [{
             label: '',
             data: this.getChartData(),
-            barThickness: 20, // 봉의 고정된 너비를 설정
+            barThickness: 25, // 봉의 고정된 너비를 설정
             maxBarThickness: 15, // 봉의 최대 너비를 제한
           }]
         },
         options: {
           responsive: true,
+          maintainAspectRatio: false, // 창 크기 조절 시 비율을 유지하지 않음
           scales: {
             x: {
               type: 'time',
@@ -90,7 +91,6 @@ export default {
                 const label = tooltipModel.dataPoints[0].label;
                 const dataIndex = tooltipModel.dataPoints[0].dataIndex;
                 const data = tooltipModel.dataPoints[0].dataset.data[dataIndex];
-                console.log(tooltipModel.dataPoints[0])
                 const parts = label.split(", ");
                 const dateString = parts[0] + " " + parts[1];
                 const date = new Date(dateString);
@@ -166,7 +166,13 @@ export default {
 </script>
 
 <style scoped>
+.chart-base {
+  width: 100%;
+  height: 100%;
+}
 canvas {
+  height: 100%;
+  width: 100%;
   max-width: 100%;
 }
 </style>

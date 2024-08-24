@@ -1,7 +1,7 @@
 <template>
   <div class="right">
-<!--    <View5 />-->
-<!--    <Element1 />-->
+    <MatchTypeTab />
+    <Element1 />
 <!--    <Element2 />-->
 <!--    <Element3 />-->
 <!--    <Element4 />-->
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import View5 from "./Right/sections/View5.vue";
+import MatchTypeTab from "./Right/sections/MatchTypeTab.vue";
 import Element1 from "./Right/sections/Element1.vue";
 import Element2 from "./Right/sections/Element2.vue";
 import Element3 from "./Right/sections/Element3.vue";
@@ -22,7 +22,7 @@ import View6 from "./Right/sections/View6.vue";
 export default {
   name: "Right",
   components: {
-    View5,
+    MatchTypeTab,
     Element1,
     Element2,
     Element3,
