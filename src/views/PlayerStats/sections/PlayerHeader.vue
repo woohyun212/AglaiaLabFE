@@ -6,7 +6,7 @@
       width="2048"/>
     <div class="player-header-cover"/>
     <div class="info">
-      <div class="player-name"><h1>구은조</h1>
+      <div class="player-name"><h1>김현우</h1>
         <ButtonWrapper/>
       </div>
       <div style="display: flex; flex-direction: row;width: 100%;height: 100%;">
