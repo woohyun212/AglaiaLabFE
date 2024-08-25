@@ -4,7 +4,7 @@
       <div class="text-wrapper-123">사출</div>
       <p class="element-10">
         <span class="text-wrapper-124">12 </span>
-        <span class="text-wrapper-125">회</span>
+        <span class="unit-wrapper">회</span>
       </p>
     </div>
   </div>
@@ -18,11 +18,9 @@ export default {
 
 <style>
 .view-4 {
+  width: 100%;
+  grid-area:a;
   height: 32px;
-  left: 14px;
-  position: absolute;
-  top: 92px;
-  width: 161px;
 }
 
 .view-4 .overlap-18 {
@@ -30,7 +28,7 @@ export default {
   border-radius: 4px;
   height: 32px;
   position: relative;
-  width: 157px;
+  
 }
 
 .view-4 .text-wrapper-123 {
@@ -39,13 +37,13 @@ export default {
   font-size: 11px;
   font-weight: 700;
   height: 16px;
-  left: 45px;
+  
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
+  
   text-align: center;
-  top: 8px;
-  width: 22px;
+  
+  
 }
 
 .view-4 .element-10 {
@@ -54,13 +52,13 @@ export default {
   font-size: 16px;
   font-weight: 700;
   height: 23px;
-  left: 94px;
+  
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
+  
   text-align: center;
-  top: 5px;
-  width: 34px;
+  
+  
 }
 
 .view-4 .text-wrapper-124 {
@@ -71,7 +69,7 @@ export default {
   letter-spacing: 0;
 }
 
-.view-4 .text-wrapper-125 {
+.view-4 .unit-wrapper {
   font-size: 11px;
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
-  <div class="overlap-wrapper">
-    <div class="overlap-15">
-      <div class="text-wrapper-114">캐리력</div>
-      <p class="element-7">
-        <span class="text-wrapper-115">99</span>
-        <span class="text-wrapper-116">점</span>
+  <div class="view-3">
+    <div class="overlap-17">
+      <div class="text-wrapper-120">멘탈</div>
+      <p class="element-9">
+        <span class="text-wrapper-121">-99 </span>
+        <span class="text-wrapper-122">점</span>
       </p>
     </div>
   </div>
@@ -12,59 +12,57 @@
 
 <script>
 export default {
-  name: "OverlapWrapper",
+  name: "View3",
 };
 </script>
 
-
 <style>
-.overlap-wrapper {
+.view-3 {
+  grid-area:d;
+
+  width: 100%;
   height: 32px;
-  left: 183px;
-  position: absolute;
-  top: 92px;
-  width: 160px;
 }
 
-.overlap-wrapper .overlap-15 {
-  background-image: url(https://c.animaapp.com/SjFnLgAk/img/rectangle-20.svg);
+.view-3 .overlap-17 {
+  background-image: url(https://c.animaapp.com/SjFnLgAk/img/rectangle-22.svg);
   background-size: 100% 100%;
   height: 32px;
   position: relative;
-  width: 156px;
+  
 }
 
-.overlap-wrapper .text-wrapper-114 {
+.view-3 .text-wrapper-120 {
   color: #ffffff;
   font-family: "Noto Sans KR", Helvetica;
   font-size: 11px;
   font-weight: 700;
   height: 16px;
-  left: 47px;
+  left: 37px;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
+  
   text-align: center;
   top: 8px;
-  width: 31px;
+  
 }
 
-.overlap-wrapper .element-7 {
+.view-3 .element-9 {
   color: #ffffff;
   font-family: "Noto Sans KR", Helvetica;
   font-size: 16px;
   font-weight: 700;
   height: 23px;
-  left: 109px;
+  left: 83px;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
+  
   text-align: center;
   top: 5px;
-  width: 29px;
+  
 }
 
-.overlap-wrapper .text-wrapper-115 {
+.view-3 .text-wrapper-121 {
   color: #ffffff;
   font-family: "Noto Sans KR", Helvetica;
   font-size: 16px;
@@ -72,8 +70,7 @@ export default {
   letter-spacing: 0;
 }
 
-.overlap-wrapper .text-wrapper-116 {
+.view-3 .text-wrapper-122 {
   font-size: 11px;
 }
-
 </style>

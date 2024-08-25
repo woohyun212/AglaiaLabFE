@@ -7,7 +7,7 @@
           colorBack="#000000"
           colorUnfilled="#A5D261"
           colorFilled="#ffD261"
-          :stroke-width="8"
+          stroke-width="8"
           :size="60"
       />
       <span
@@ -57,21 +57,21 @@ export default {
 
 <style>
 .recent20-stats {
+  grid-area:recent20-stats;
   position: relative;
   background-color: #545454;
   border-radius: 4px;
+  width: 100%;
   height: 100%;
-  width: 50%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 2%;
 }
 
 .recent20-stats .win-rate-bar {
   position: relative;
-  width: 100%;
   height: 100%;
 }
 
@@ -84,11 +84,11 @@ export default {
 
 .recent20-stats .stat {
   position: relative;
-  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  white-space: nowrap;
 }
 
 .stat .stats-title {

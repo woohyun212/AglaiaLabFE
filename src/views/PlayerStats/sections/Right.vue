@@ -3,18 +3,18 @@
     <MatchTypeTab />
     <div class="recent-match-stats">
       <MatchHistoryStats />
-<!--    <Element2 />-->
-<!--    <Element3 />-->
-<!--    <Element4 />-->
-<!--    <Element5 />-->
-<!--    <View6 />-->
+    <Element2 />
+    <Element3 />
+    <Element4 />
+    <Element5 />
+    <View6 />
     </div>
   </div>
 </template>
 
 <script>
 import MatchTypeTab from "./Right/sections/MatchTypeTab.vue";
-import MatchHistoryStats from "./Right/sections/RecentMatchHistoryStats.vue";
+import MatchHistoryStats from "./Right/sections/RecentMatchHistoryOverview.vue";
 import Element2 from "./Right/sections/Element2.vue";
 import Element3 from "./Right/sections/Element3.vue";
 import Element4 from "./Right/sections/Element4.vue";

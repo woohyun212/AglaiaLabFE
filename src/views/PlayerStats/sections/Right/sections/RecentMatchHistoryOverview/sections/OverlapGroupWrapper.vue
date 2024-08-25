@@ -19,11 +19,10 @@ export default {
 
 <style>
 .overlap-group-wrapper {
+  grid-area:c;
+
+  width: 100%;
   height: 32px;
-  left: 353px;
-  position: absolute;
-  top: 92px;
-  width: 160px;
 }
 
 .overlap-group-wrapper .overlap-16 {
@@ -31,7 +30,7 @@ export default {
   background-size: 100% 100%;
   height: 32px;
   position: relative;
-  width: 156px;
+  
 }
 
 .overlap-group-wrapper .text-wrapper-117 {
@@ -43,10 +42,10 @@ export default {
   left: 38px;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
+  
   text-align: center;
   top: 8px;
-  width: 21px;
+  
 }
 
 .overlap-group-wrapper .element-8 {
@@ -58,10 +57,10 @@ export default {
   left: 88px;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
+  
   text-align: center;
   top: 5px;
-  width: 34px;
+  
 }
 
 .overlap-group-wrapper .text-wrapper-118 {
