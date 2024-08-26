@@ -69,10 +69,8 @@ export default {
   border-radius: 4px;
   box-shadow: 0px 0px 4px #00000040;
   height: 91px;
-  left: 11px;
-  position: absolute;
-  top: 604px;
-  width: 693px;
+  position: relative;
+  width: 100%;
 }
 
 .view-6 .overlap-35 {
@@ -80,7 +78,7 @@ export default {
   height: 91px;
   left: 7px;
   position: relative;
-  width: 679px;
+  width: 98%;
 }
 
 .view-6 .view-46 {

@@ -33,11 +33,12 @@ export default {
 <style>
 .content {
   background-color: #6c6c6c;
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 200vh;
+  height: fit-content;
   flex: 1;
   align-items: center;
   overflow-x: hidden;

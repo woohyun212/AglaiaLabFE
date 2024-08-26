@@ -88,12 +88,11 @@ export default {
   padding: 1%;
   border-radius: 4px;
   background-color: #525252;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: #ffffff;
   font-family: "Noto Sans KR", Helvetica;
   letter-spacing: 0;
-  line-height: normal;
   text-align: center;
   white-space: nowrap;
 }
@@ -105,7 +104,7 @@ export default {
 }
 
 .unit-wrapper {
-
+  font-size: 0.7rem;
 }
 
 .good {

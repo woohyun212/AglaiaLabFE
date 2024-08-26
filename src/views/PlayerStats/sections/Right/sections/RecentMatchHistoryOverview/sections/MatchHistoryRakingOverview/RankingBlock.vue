@@ -52,6 +52,7 @@ export default {
   background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 설정 */
   background-size: cover; /* 배경 이미지가 요소 크기에 맞게 확장되도록 설정 */
   background-image: url("https://thumb.ac-illust.com/c5/c5dfa3da4b7d546a7bbfaf68d10b3e6e_t.jpeg");
+  transform: scaleX(-1);
 }
 
 .gold {
