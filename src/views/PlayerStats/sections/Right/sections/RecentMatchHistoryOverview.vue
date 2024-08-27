@@ -35,7 +35,7 @@ import MatchHistoryOverview
   from "@/views/PlayerStats/sections/Right/sections/RecentMatchHistoryOverview/sections/MatchHistoryRakingOverview.vue";
 
 export default {
-  name: "RecentMatchHistoryStats",
+  name: "RecentMatchHistoryOverview",
   components: {
     Recent20MatchStat,
     MatchHistoryOverview,
@@ -55,7 +55,6 @@ export default {
   methods: {
     updateGap() {
       const containerWidth = this.$refs.container.offsetWidth; // 컨테이너의 현재 너비를 가져옴
-      console.log(containerWidth);
       this.computedGap = `${containerWidth * 0.02}px`; // 너비의 2%를 gap으로 설정
     }
   }

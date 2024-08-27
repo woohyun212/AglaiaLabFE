@@ -31,49 +31,42 @@ export default {
 
 <style scoped>
 .basic-block {
-  border: #000000 solid 1px;
   position: relative;
-  color: #ffffff;
   background-color: #d9d9d9;
   border-radius: 25%;
   aspect-ratio: 1;
   height: 100%;
+  min-height: 25px;
   font-family: "Noto Sans KR", Helvetica;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0;
   line-height: 1.5rem;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .escape-image {
-  border: #009262 solid 1.5px;
   background-position: center;
   background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 설정 */
   background-size: cover; /* 배경 이미지가 요소 크기에 맞게 확장되도록 설정 */
-  background-image: url("https://thumb.ac-illust.com/c5/c5dfa3da4b7d546a7bbfaf68d10b3e6e_t.jpeg");
+  background-image: url("src/assets/escape-man.svg");
   transform: scaleX(-1);
 }
 
 .gold {
-  background: rgb(255, 204, 110);
-  border-radius: 5px;
+  background: linear-gradient(135deg, rgb(255, 252, 163) 0%, rgb(196, 159, 70) 100%);
+  color: #ffffff;
 }
 
 
 .silver {
-  color: rgb(255, 255, 255);
-  background: rgb(154, 154, 154);
-  border-radius: 5px;
+  background: linear-gradient(135deg, rgb(235, 235, 235) 0%, rgb(133, 133, 133) 100%);
+  color: #ffffff;
 }
 
 .bronze {
-  background: rgb(184, 87, 66);
-  border-radius: 5px;
+  background: linear-gradient(135deg, rgb(196, 152, 87) 0%, rgb(94, 73, 42) 100%);
+  color: #ffffff;
 }
-
-.black-letter {
-  color: #000000;
-}
-
 </style>

@@ -2,7 +2,7 @@
   <div class="right">
     <MatchTypeTab/>
     <div class="recent-match-stats">
-      <MatchHistoryStats/>
+      <RecentMatchHistoryOverview/>
       <MatchHistoryCard/>
 <!---->
 <!--      <Element3/>-->
@@ -15,18 +15,18 @@
 <!--!TODO: 동일한 색상은 styleguide에 변수로 등록하기-->
 <script>
 import MatchTypeTab from "./Right/sections/MatchTypeTab.vue";
-import MatchHistoryStats from "./Right/sections/RecentMatchHistoryOverview.vue";
+import RecentMatchHistoryOverview from "./Right/sections/RecentMatchHistoryOverview.vue";
 import MatchHistoryCard from "./Right/sections/MatchHistoryCard.vue";
-import Element3 from "./Right/sections/Element3.vue";
-import Element4 from "./Right/sections/Element4.vue";
-import Element5 from "./Right/sections/Element5.vue";
-import View6 from "./Right/sections/View6.vue";
+import Element3 from "./Right/sections/silver.vue";
+import Element4 from "./Right/sections/bronze.vue";
+import Element5 from "./Right/sections/else.vue";
+import View6 from "./Right/sections/escape.vue";
 
 export default {
   name: "Right",
   components: {
     MatchTypeTab,
-    MatchHistoryStats,
+    RecentMatchHistoryOverview,
     MatchHistoryCard,
     Element3,
     Element4,

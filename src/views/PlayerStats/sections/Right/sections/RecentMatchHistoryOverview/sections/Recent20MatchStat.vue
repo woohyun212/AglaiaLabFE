@@ -59,7 +59,6 @@ export default {
 .recent20-stats {
   grid-area:recent20-stats;
   position: relative;
-  background-color: #545454;
   border-radius: 4px;
   width: 100%;
   height: 100%;
@@ -92,9 +91,8 @@ export default {
 }
 
 .stat .stats-title {
-  color: #ffffff;
   font-family: "Noto Sans KR", Helvetica;
-  font-size: 12px;
+  font-size: 0.8rem;
   font-weight: 300;
   height: 17px;
   letter-spacing: -0.36px;
@@ -105,9 +103,8 @@ export default {
 }
 
 .stat .stats-value {
-  color: #ffffff;
   font-family: "Noto Sans KR", Helvetica;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: -0.42px;
   line-height: normal;
