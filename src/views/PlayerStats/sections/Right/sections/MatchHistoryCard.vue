@@ -5,8 +5,8 @@
         <GameInfo/>
         <GameCharacterInfo/>
         <GameWeaponTacticSkillTrait/>
-        <GameInfoDetail/>
-        <GameItems/>
+        <GameInfoDetail :game-info-detail="gameInfoDetail"/>
+        <GameItems :equipment="equipment"/>
       </div>
       <button @click="toggleDetails">
         <svg
@@ -49,7 +49,24 @@ export default {
   components: {GameInfoDetail, GameWeaponTacticSkillTrait, GameCharacterInfo, GameInfo, GameItems},
   data() {
     return {
-      isDetailsVisible: false
+      isDetailsVisible: false,
+
+      equipment: {
+        "0": 110412,
+        "1": 202512,
+        "2": 701451,
+        "3": 203503,
+        "4": 204413
+      },
+      gameInfoDetail: {
+        teamKill: 0,
+        playerKill: 1,
+        playerAssistant: 2,
+        damageToPlayer: 3,
+        mmrBefore: 4,
+        mmrGain: 5,
+        routeIdOfStart: 6
+      }
     };
   },
   computed: {

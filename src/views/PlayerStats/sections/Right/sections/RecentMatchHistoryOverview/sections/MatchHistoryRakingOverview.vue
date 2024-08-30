@@ -1,6 +1,6 @@
 <template>
   <div class="match-history-overview">
-    <div class="overview-group" v-for="(group) in groupedItems">
+    <div class="overview-group" v-for="(group) in groupMatch">
       <RankingBlock v-for="(gameData) in group" :game-rank="gameData.gameRank" :escape-state="gameData.escapeState"/>
     </div>
   </div>
@@ -28,7 +28,7 @@ export default {
     },
   },
   computed: {
-    groupedItems() {
+    groupMatch() {
       // items를 10개씩 그룹화
       const size = 10;
       const result = [];

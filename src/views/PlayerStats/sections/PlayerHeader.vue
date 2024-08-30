@@ -2,7 +2,7 @@
   <div class="player-header">
 <!--    <img class="character-image" alt="Character image" src="https://c.animaapp.com/SjFnLgAk/img/&#45;&#45;&#45;&#45;.png"/>-->
     <img class="character-image"
-      :src="`${$ERCDN}/Character/001/1001000/full.png`" height="2048"
+      :src="`${$ERCDN}/Character/065/1065002/full.png`" height="2048"
       width="2048"/>
     <div class="player-header-cover"/>
     <div class="info">
