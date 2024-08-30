@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import HomePage from '../views/HomePage.vue'
+import HomePage from '../views/HomePage.vue'
 import PlayerStats from '../views/PlayerStats.vue'
 // import Leaderboard from '../views/Leaderboard.vue'
 // import MatchHistory from '../views/MatchHistory.vue'
@@ -8,7 +8,7 @@ import PlayerStats from '../views/PlayerStats.vue'
 // import Community from '../views/Community.vue'
 
 const routes = [
-  // { path: '/', component: HomePage },
+  { path: '/', component: HomePage },
   { path: '/player-stats', component: PlayerStats },
   // { path: '/leaderboard', component: Leaderboard },
   // { path: '/match-history', component: MatchHistory },

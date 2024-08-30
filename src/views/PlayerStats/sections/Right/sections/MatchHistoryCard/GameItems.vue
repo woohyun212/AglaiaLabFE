@@ -3,14 +3,16 @@
     <!--transcendence / legend / hero-->
 
     <div class="items-line">
-      <img class="item hero" src="https://c.animaapp.com/SjFnLgAk/img/nephleon-4@2x.png"/>
-      <img class="item legend" src="https://c.animaapp.com/SjFnLgAk/img/the-revenant-4@2x.png"/>
-      <img class="item transcendence" src="https://c.animaapp.com/SjFnLgAk/img/the-black-death-4@2x.png"/>
+      <img alt="Weapon" class="item hero" src="https://c.animaapp.com/SjFnLgAk/img/nephleon-4@2x.png"/>
+      <img alt="Chest" class="item legend" src="https://c.animaapp.com/SjFnLgAk/img/the-revenant-4@2x.png"/>
+      <img alt="Head" class="item mystic" src="https://c.animaapp.com/SjFnLgAk/img/the-black-death-4@2x.png"/>
 
     </div>
     <div class="items-line">
-      <img class="item hero" src="https://c.animaapp.com/SjFnLgAk/img/music-box-4@2x.png"/>
-      <img class="item hero" src="https://c.animaapp.com/SjFnLgAk/img/emerald-tablet-4@2x.png"/>
+      <img alt="Arm" class="item hero" src="https://c.animaapp.com/SjFnLgAk/img/music-box-4@2x.png"/>
+      <img alt="Leg" class="item hero" src="https://c.animaapp.com/SjFnLgAk/img/emerald-tablet-4@2x.png"/>
+<!--      TODO: Show Trinket Item_old -->
+<!--      <img alt="Trinket" class="item hero" src="https://c.animaapp.com/SjFnLgAk/img/emerald-tablet-4@2x.png"/>-->
     </div>
   </div>
 </template>
@@ -23,9 +25,8 @@ export default {
 
 </script>
 
+<!-- TODO : Add background linear-gradient -->
 <style scoped>
-
-
 .game-items {
   width: 27%;
   height: 100%;
@@ -50,7 +51,7 @@ export default {
   width: 49px;
 }
 
-.transcendence {
+.mystic {
   background: linear-gradient(180deg, rgb(97, 0, 0) 0%, rgb(255, 0, 0) 100%);
   border: 1px solid #ff5555;
 }
@@ -65,8 +66,20 @@ export default {
   border: 1px solid #8a6eba;
 }
 
+.rare {
+}
+
+.uncommon {
+}
+
+.common {
+}
+
+.none {
+}
+
 .view-14 {
-  background: url(),
+  background: url(""),
   linear-gradient(180deg, rgb(90, 62, 122) 0%, rgb(165.25, 113.84, 224) 100%),
   50% 50%;
   background-size: cover;

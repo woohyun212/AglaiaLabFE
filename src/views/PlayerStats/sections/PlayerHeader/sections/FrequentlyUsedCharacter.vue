@@ -32,7 +32,7 @@ export default {
         {"characterName": "Aya", "characterImageUrl": "src/assets/ER/Character/002. Aya/02. Default - 기본/Mini.png"},
         {
           "characterName": "Hyunwoo",
-          "characterImageUrl": "src/assets/ER/Character/003. Hyunwoo/02. Default - 기본/Mini.png"
+          "characterImageUrl": "src/assets/ER/Character/0037. Hyunwoo/02. Default - 기본/Mini.png"
         },
         {
           "characterName": "Magnus",

@@ -10,26 +10,24 @@ export default {
     <div class="group-wrapper">
       <div class="img-wrapper">
         <img
-            class="element-twohanded-sword-2"
-            alt="Element twohanded sword"
+            alt="Weapon"
             src="https://c.animaapp.com/SjFnLgAk/img/15--twohanded-sword-5@2x.png"
         />
       </div>
       <div class="img-wrapper">
         <img
-            class="element-blink-2"
-            alt="Element blink"
+            alt="Tactic Skill"
             src="https://c.animaapp.com/SjFnLgAk/img/01--blink-5@2x.png"
         />
       </div>
     </div>
     <div class="group-wrapper">
       <div class="img-wrapper">
-        <img class="" alt="Sentinel"
+        <img alt="Core Trait"
              src="https://c.animaapp.com/SjFnLgAk/img/sentinel--------4@2x.png"/>
       </div>
       <div class="img-wrapper">
-        <img class="" alt="Image"
+        <img alt="Auxiliary Trait"
              src="https://c.animaapp.com/SjFnLgAk/img/image-7-4@2x.png"/>
       </div>
     </div>
