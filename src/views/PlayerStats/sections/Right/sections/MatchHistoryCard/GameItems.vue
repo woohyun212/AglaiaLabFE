@@ -1,18 +1,14 @@
 <template>
   <div class="game-items">
-    <!--transcendence / legend / hero-->
-
     <div class="items-line">
-      <img alt="Weapon" class="item hero" :src="`${$ERCDN}/Item/101104.png`"/>
-      <img alt="Chest" class="item legend" :src="`${$ERCDN}/Item/101104.png`"/>
-      <img alt="Head" class="item mystic" :src="`${$ERCDN}/Item/101104.png`"/>
-
+      <img alt="Weapon" class="item hero" :src="`${$ERCDN}/Item/${equipment['0']}.png`"/>
+      <img alt="Chest" class="item legend" :src="`${$ERCDN}/Item/${equipment['1']}.png`"/>
+      <img alt="Head" class="item mystic" :src="`${$ERCDN}/Item/${equipment['2']}.png`"/>
     </div>
     <div class="items-line">
-      <img alt="Arm" class="item hero" :src="`${$ERCDN}/Item/101104.png`"/>
-      <img alt="Leg" class="item hero" :src="`${$ERCDN}/Item/101104.png`"/>
-<!--      TODO: Add Trinket Item_old -->
-<!--      <img alt="Trinket" class="item hero" src="https://c.animaapp.com/SjFnLgAk/img/emerald-tablet-4@2x.png"/>-->
+      <img alt="Arm" class="item rare" :src="`${$ERCDN}/Item/${equipment['3']}.png`"/>
+      <img alt="Leg" class="item uncommon" :src="`${$ERCDN}/Item/${equipment['4']}.png`"/>
+      <img v-if="equipment['5']" alt="Trinket" class="item common" :src="`${$ERCDN}/Item/${equipment['5']}.png`"/>
     </div>
   </div>
 </template>
@@ -20,12 +16,14 @@
 <script>
 export default {
   name: "GameItems",
-
+  props: ["equipment"],
+  data() {
+    return {}
+  },
 }
 
 </script>
 
-<!-- TODO : Add background linear-gradient -->
 <style scoped>
 .game-items {
   width: 27%;
@@ -67,45 +65,22 @@ export default {
 }
 
 .rare {
+  background: linear-gradient(180deg, rgb(62, 76, 122) 0%, rgb(113, 132, 224) 100%);
+  border: 1px solid #6e80ba;
 }
 
 .uncommon {
+  background: linear-gradient(180deg, rgb(86, 122, 62) 0%, rgb(133, 224, 113) 100%);
+  border: 1px solid #76ba6e;
 }
 
 .common {
+  background: linear-gradient(180deg, rgb(107, 109, 122) 0%, rgb(190, 194, 213) 100%);
+  border: 1px solid #a7abb8;
 }
 
 .none {
+  background: #808080FF;
+  border: 1px solid #a7abb8;
 }
-
-.view-14 {
-  background: url(""),
-  linear-gradient(180deg, rgb(90, 62, 122) 0%, rgb(165.25, 113.84, 224) 100%),
-  50% 50%;
-  background-size: cover;
-  border-radius: 2px;
-  height: 27px;
-  width: 49px;
-}
-
-.view-15 {
-  //background: linear-gradient(180deg, rgb(90, 62, 122) 0%, rgb(165.25, 113.84, 224) 100%);
-  //background-image: url();
-}
-
-.view-16 {
-  height: 27px;
-  width: 49px;
-  background: linear-gradient(180deg, rgb(90, 62, 122) 0%, rgb(165.25, 113.84, 224) 100%);
-}
-
-.view-17 {
-  background-image: url();
-
-}
-
-.view-18 {
-  background-image: url(https://c.animaapp.com/SjFnLgAk/img/the-revenant-4@2x.png);
-}
-
 </style>
