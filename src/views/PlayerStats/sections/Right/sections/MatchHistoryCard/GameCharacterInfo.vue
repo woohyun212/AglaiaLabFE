@@ -10,8 +10,9 @@ export default {
   },
   computed:{
     cardCharacterImageUrl(){
-      // TODO: Upload Image resource to CDN Server & Implement fetch Image functions.
-      return {backgroundImage: 'url("./../../../../../src/assets/ER/Character/001. Jackie/02. Default - 기본/Mini.png")'}
+      // TODO: 필요한 정보들 동적으로 가져올 수 있게 수정할 것
+      const charNum = "012"
+      return {backgroundImage: `url("${this.$ERCDN}/Character/${charNum}/1${charNum}001/mini.png")`}
     }
   }
 }

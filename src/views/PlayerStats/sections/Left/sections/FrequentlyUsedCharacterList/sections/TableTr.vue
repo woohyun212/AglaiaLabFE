@@ -11,7 +11,7 @@
         <div class="character-box">
           <div class="image-wrapper">
             <img class="character-img" alt="character-img"
-                 src="../../../../../../../assets/ER/Character/065. Debi & Marlene/02. Default/Mini_DebiMarlene_00.png"/>
+                 :src="`${$ERCDN}/Character/065/1065000/mini.png`"/>
           </div>
           <div class="character-play-info">
             <p>{{ stat.name }}</p>

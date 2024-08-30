@@ -8,7 +8,7 @@
   </div>
   <hr/>
   <div class="rank-mmr-stats">
-    <img class="rank-icon" alt="Rank icon" src="../../../../../assets/ER/Rank Tier/09. Immortal - 이터니티 - エターニティ.png"/>
+    <img class="rank-icon" alt="Rank icon" :src="`${$ERCDN}/RankTier/Immortal.png`"/>
     <div class="rank-info">
       <p class="rank-info-pre"><span class="rank-tag">이터니티</span><span class="mmr-sub">10,301 RP</span></p>
       <p class="rank-info-pre">승률 99.9 % <span class="mmr-sub">319승 12패</span></p>

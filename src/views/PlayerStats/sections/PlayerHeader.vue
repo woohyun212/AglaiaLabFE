@@ -2,7 +2,7 @@
   <div class="player-header">
 <!--    <img class="character-image" alt="Character image" src="https://c.animaapp.com/SjFnLgAk/img/&#45;&#45;&#45;&#45;.png"/>-->
     <img class="character-image"
-      src="../../../assets/ER/Character/065/1065002/full.webp" height="2048"
+      :src="`${$ERCDN}/Character/001/1001000/full.png`" height="2048"
       width="2048"/>
     <div class="player-header-cover"/>
     <div class="info">
@@ -55,11 +55,11 @@ export default {
 
 .character-image {
   position: absolute;
-  top: -15vh;
-  right: -25vw;
+  top: -25vh;
+  right: -20vw;
   width: 75vw;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .player-header-cover {

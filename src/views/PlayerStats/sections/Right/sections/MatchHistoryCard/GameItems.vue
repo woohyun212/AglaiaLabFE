@@ -3,15 +3,15 @@
     <!--transcendence / legend / hero-->
 
     <div class="items-line">
-      <img alt="Weapon" class="item hero" src="https://c.animaapp.com/SjFnLgAk/img/nephleon-4@2x.png"/>
-      <img alt="Chest" class="item legend" src="https://c.animaapp.com/SjFnLgAk/img/the-revenant-4@2x.png"/>
-      <img alt="Head" class="item mystic" src="https://c.animaapp.com/SjFnLgAk/img/the-black-death-4@2x.png"/>
+      <img alt="Weapon" class="item hero" :src="`${$ERCDN}/Item/101104.png`"/>
+      <img alt="Chest" class="item legend" :src="`${$ERCDN}/Item/101104.png`"/>
+      <img alt="Head" class="item mystic" :src="`${$ERCDN}/Item/101104.png`"/>
 
     </div>
     <div class="items-line">
-      <img alt="Arm" class="item hero" src="https://c.animaapp.com/SjFnLgAk/img/music-box-4@2x.png"/>
-      <img alt="Leg" class="item hero" src="https://c.animaapp.com/SjFnLgAk/img/emerald-tablet-4@2x.png"/>
-<!--      TODO: Show Trinket Item_old -->
+      <img alt="Arm" class="item hero" :src="`${$ERCDN}/Item/101104.png`"/>
+      <img alt="Leg" class="item hero" :src="`${$ERCDN}/Item/101104.png`"/>
+<!--      TODO: Add Trinket Item_old -->
 <!--      <img alt="Trinket" class="item hero" src="https://c.animaapp.com/SjFnLgAk/img/emerald-tablet-4@2x.png"/>-->
     </div>
   </div>

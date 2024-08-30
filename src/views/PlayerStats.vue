@@ -1,10 +1,10 @@
 <template>
   <div class="content">
-<!--    <img-->
-<!--        class="rank-image"-->
-<!--        alt="Rank image group"-->
-<!--        src="../assets/ER/ER/RankTier/Immortal.png"-->
-<!--    />-->
+    <img
+        class="rank-image"
+        alt="Rank image group"
+        :src="`${$ERCDN}/RankTier/Immortal.png`"
+    />
     <div class="blur-layer"/>
     <PlayerHeader/>
     <div class="under-section">

@@ -168,6 +168,7 @@ export default {
 <style scoped>
 .chart-base {
   width: 100%;
+  min-height: 200px;
 }
 canvas {
   width: 100%;

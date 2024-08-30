@@ -25,14 +25,14 @@ export default {
   },
   computed: {
     backgroundStyle() {
-      // 배포 시 주석 처리 할 것
-      const characterImageUrl = '../../../../../../../'.concat(this.characterImageUrl);
+      // 배포 시 주석 처리 할 것 (deprecate)
+      // const characterImageUrl = '../../../../../../../'.concat(this.characterImageUrl);
       // console.log(this.characterImageUrl);
       return {
-        // 개발할 때 사용
-        backgroundImage: `url(${new URL(characterImageUrl, import.meta.url)})`
+        // 개발할 때 사용 (deprecate)
+        // backgroundImage: `url(${new URL(characterImageUrl, import.meta.url)})`
         // http 주소로 가져올 수 있으면 아래의 것으로 사용
-        // backgroundImage: `url(${this.characterImageUrl})`
+        backgroundImage: `url(${this.characterImageUrl})`
       };
     }
   }

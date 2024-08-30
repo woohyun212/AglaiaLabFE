@@ -8,8 +8,8 @@ console.log()
 
 <template>
   <div id="homepage">
-    <h1 style="font-size: 100px">시발</h1>
-    <img :src="`${$ERCDN}/RankTier/Diamond.png`" alt="CDN Image" />
+    <h1 style="font-size: 100px">아핳 아글라이아 프로젝뚜우ㅜㅜㅜㅜㅜㅜㅜㅇ</h1>
+
 <!--    <img-->
 <!--        style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"-->
 <!--        src="https://cdn.w00.kr/ER/RankTier/Gold.png">-->

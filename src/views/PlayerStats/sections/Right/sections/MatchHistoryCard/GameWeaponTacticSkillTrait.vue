@@ -11,24 +11,26 @@ export default {
       <div class="img-wrapper">
         <img
             alt="Weapon"
-            src="https://c.animaapp.com/SjFnLgAk/img/15--twohanded-sword-5@2x.png"
+            :src="`${$ERCDN}/WeaponGroup/Axe.png`"
         />
       </div>
       <div class="img-wrapper">
         <img
             alt="Tactic Skill"
-            src="https://c.animaapp.com/SjFnLgAk/img/01--blink-5@2x.png"
+            :src="`${$ERCDN}/TacticSkill/4102000.png`"
         />
       </div>
     </div>
     <div class="group-wrapper">
       <div class="img-wrapper">
         <img alt="Core Trait"
-             src="https://c.animaapp.com/SjFnLgAk/img/sentinel--------4@2x.png"/>
+             :src="`${$ERCDN}/Trait/7000401.png`"
+        />
       </div>
       <div class="img-wrapper">
         <img alt="Auxiliary Trait"
-             src="https://c.animaapp.com/SjFnLgAk/img/image-7-4@2x.png"/>
+             :src="`${$ERCDN}/Trait/7300000.png`"
+        />
       </div>
     </div>
   </div>

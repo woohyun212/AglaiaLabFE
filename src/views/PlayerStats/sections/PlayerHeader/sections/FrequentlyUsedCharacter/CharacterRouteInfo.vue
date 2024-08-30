@@ -4,57 +4,62 @@
       <h1>루트 정보</h1>
       <p class="route-info-title">루트 번호 6974747</p>
     </div>
+<!-- TODO: 1. 특성 그룹별로 나눠서 JSON 만들기
+           2. 데이터에서 선택한 가져와서 선택한 특성 그룹 2개 가져옴
+           3. un / selected 반영-->
     <div class="trait">
       <div class="trait-box">
         <div class="trait-line">
           <img class="trait-img selected" alt="trait-first-core"
-               src="../../../../../../assets/ER/Loadout/Havoc/Accelerator.png"/>
+               :src="`${$ERCDN}/Trait/7000201.png`"/>
           <img class="trait-img unselected" alt="trait-first-core"
-               src="../../../../../../assets/ER/Loadout/Havoc_파괴/Adrenaline_아드레날린.png"/>
+               :src="`${$ERCDN}/Trait/7000201.png`"/>
           <img class="trait-img unselected" alt="trait-first-core"
-               src="../../../../../../assets/ER/Loadout/Havoc_파괴/Vampiric Bloodline_흡혈마.png"/>
+               :src="`${$ERCDN}/Trait/7000201.png`"/>
           <img class="trait-img unselected" alt="trait-first-core"
-               src="../../../../../../assets/ER/Loadout/Havoc_파괴/Frailty Infliction_취약.png"/>
+               :src="`${$ERCDN}/Trait/7000201.png`"/>
         </div>
         <div class="trait-line">
-          <img class="trait-img unselected" alt="trait-sub" src="../../../../../../assets/ER/Loadout/Havoc/Endorphin.png"/>
-          <img class="trait-img selected" alt="trait-sub"
-               src="../../../../../../assets/ER/Loadout/Havoc_파괴/Anima Reaper_영혼흡수장치.png"/>
-          <img class="trait-img unselected" alt="trait-sub" src="../../../../../../assets/ER/Loadout/Havoc/Carnivore.png"/>
-        </div>
-        <div class="trait-line">
-          <img class="trait-img unselected" alt="trait-sub" src="../../../../../../assets/ER/Loadout/Havoc/Frenzy.png"/>
           <img class="trait-img unselected" alt="trait-sub"
-               src="../../../../../../assets/ER/Loadout/Havoc_파괴/Dismantle Goliath_열세극복.png"/>
+               :src="`${$ERCDN}/Trait/7000201.png`"/>
           <img class="trait-img selected" alt="trait-sub"
-               src="../../../../../../assets/ER/Loadout/Havoc/Contempt%20for%20the%20Weak.png"/>
+               :src="`${$ERCDN}/Trait/7000201.png`"/>
+          <img class="trait-img unselected" alt="trait-sub"
+               :src="`${$ERCDN}/Trait/7000201.png`"/>
+        </div>
+        <div class="trait-line">
+          <img class="trait-img unselected" alt="trait-sub" :src="`${$ERCDN}/Trait/7000201.png`"/>
+          <img class="trait-img unselected" alt="trait-sub"
+               :src="`${$ERCDN}/Trait/7000201.png`"/>
+          <img class="trait-img selected" alt="trait-sub"
+               :src="`${$ERCDN}/Trait/7000201.png`"/>
         </div>
       </div>
 
       <div class="trait-box">
         <div class="weapon-tactic-skill trait-line">
           <img class="weapon" alt="weapon"
-               src="../../../../../../assets/ER/Item_old/00.%20Weapon%20Group/13. Axe.png"/>
+               :src="`${$ERCDN}/WeaponGroup/Pistol.png`"/>
           <img class="tactic-skill" alt="tactic-skill"
-               src="../../../../../../assets/ER/Tactical%20Skills/01. Blink.png"/>
+               :src="`${$ERCDN}/TacticSkill/4000000.png`"/>
         </div>
         <div class="trait-line">
           <img class="trait-img unselected" alt="trait-sub"
-               src="../../../../../../assets/ER/Loadout/Support/Thrill%20of%20the%20Hunt.png">
+               :src="`${$ERCDN}/Trait/7310401.png`"/>
           <img class="trait-img selected" alt="trait-sub"
-               src="../../../../../../assets/ER/Loadout/Support_지원/Thorn Shackles_가시덤불.png" height="64" width="64"/>
-          <img class="trait-img unselected" alt="trait-sub" src="../../../../../../assets/ER/Loadout/Support/Coin%20Toss.png"
-               height="64" width="64"/>
-          <img class="trait-img unselected" alt="trait-sub" src="../../../../../../assets/ER/Loadout/Support/Camping%20Guide.png"
-               height="64" width="64"/>
+               :src="`${$ERCDN}/Trait/7310401.png`"/>
+          <img class="trait-img unselected" alt="trait-sub"
+               :src="`${$ERCDN}/Trait/7310401.png`"/>
+          <img class="trait-img unselected" alt="trait-sub"
+               :src="`${$ERCDN}/Trait/7310401.png`"/>
         </div>
         <div class="trait-line">
-          <img class="trait-img unselected" alt="trait-sub" src="../../../../../../assets/ER/Loadout/Support_지원/Logistics_후방보급.png"
-               height="64" width="64"/>
           <img class="trait-img unselected" alt="trait-sub"
-               src="../../../../../../assets/ER/Loadout/Support_지원/Urban Warfare_시가전.png" height="64" width="64"/>
+               :src="`${$ERCDN}/Trait/7310401.png`"/>
+          <img class="trait-img unselected" alt="trait-sub"
+               :src="`${$ERCDN}/Trait/7310401.png`"/>
           <img class="trait-img selected" alt="trait-sub"
-               src="../../../../../../assets/ER/Loadout/Support_지원/Penny Pincher_할인 쿠폰.png">
+               :src="`${$ERCDN}/Trait/7310401.png`"/>
         </div>
       </div>
     </div>
