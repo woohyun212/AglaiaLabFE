@@ -1,29 +1,72 @@
 <script>
 export default {
   name: 'GameInfoDetail',
+  props: ["gameInfoDetail"],
+  data() {
+    return {
+
+    }
+  },
+  computed: {
+    upDownColor() {
+      let color;
+      if (this.gameInfoDetail.mmrGain > 0) {
+        color = 'red';
+      } else if (this.gameInfoDetail.mmrGain < 0) {
+        color = 'blue';
+      } else {
+        color = 'gray';
+      }
+      return {
+        color: color,
+        fontFamily: ["Inter", "Helvetica"],
+        fontSize: "12px",
+        fontWeight: 400,
+        letterSpacing: 0,
+      };
+    },
+    mmrGain() {
+      const mmrGain = this.gameInfoDetail.mmrGain;
+      if (mmrGain > 0) {
+        return `+${mmrGain}`;
+      } else if (mmrGain < 0) {
+        return `${mmrGain}`;
+      } else {
+        return mmrGain;
+      }
+    },
+    routeId() {
+      if (this.gameInfoDetail.routeIdOfStart) {
+        return this.gameInfoDetail.routeIdOfStart;
+      } else {
+        return "비공개";
+      }
+    },
+  }
 }
 
 </script>
 
 <template>
-<div class="game-info-detail">
-        <div class="detail-box">
-          <p class="data-name">TK / K / A</p>
-          <p class="played-data">11 / 1 / 13</p>
-        </div>
-        <div class="detail-box">
-          <p class="data-name">딜량</p>
-          <p class="played-data">18,757</p>
-        </div>
-        <div class="detail-box">
-          <p class="data-name">RP</p>
-          <p class="played-data">10301<span class="earned-rp">+241</span></p>
-        </div>
-        <div class="detail-box">
-          <p class="data-name">루트 ID</p>
-          <p class="played-data">비공개</p>
-        </div>
-      </div>
+  <div class="game-info-detail">
+    <div class="detail-box">
+      <p class="data-name">TK / K / A</p>
+      <p class="played-data">{{ gameInfoDetail.teamKill }} / {{ gameInfoDetail.playerKill }} /
+        {{ gameInfoDetail.playerAssistant }}</p>
+    </div>
+    <div class="detail-box">
+      <p class="data-name">딜량</p>
+      <p class="played-data">{{ gameInfoDetail.damageToPlayer }}</p>
+    </div>
+    <div class="detail-box">
+      <p class="data-name">RP</p>
+      <p class="played-data">{{ gameInfoDetail.mmrBefore }} <span :style="upDownColor">{{ mmrGain }}</span></p>
+    </div>
+    <div class="detail-box">
+      <p class="data-name">루트 ID</p>
+      <p class="played-data">{{ routeId }}</p>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -61,14 +104,6 @@ export default {
   font-family: "Inter", Helvetica;
   font-size: 12px;
   font-weight: 400;;
-  letter-spacing: 0;
-}
-
-.earned-rp {
-  color: #ff0000;
-  font-family: "Inter", Helvetica;
-  font-size: 12px;
-  font-weight: 400;
   letter-spacing: 0;
 }
 </style>
