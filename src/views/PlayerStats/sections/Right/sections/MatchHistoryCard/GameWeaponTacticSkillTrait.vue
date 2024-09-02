@@ -1,4 +1,6 @@
 <script>
+
+import { TRAIT_TABLE } from '@/data/data.js'
 export default {
   name: "GameWeaaponTacticSkillTrait",
   props: ["gameWeaaponTacticSkillTrait"],
@@ -7,7 +9,7 @@ export default {
   },
   computed: {
     getTraitSubGroupCode() {
-      return this.$TRAIT_TABLE[this.gameWeaaponTacticSkillTrait.traitSecondSub[0]];
+      return TRAIT_TABLE[this.gameWeaaponTacticSkillTrait.traitSecondSub[0]];
     },
   },
 }
