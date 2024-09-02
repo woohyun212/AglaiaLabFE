@@ -1,18 +1,19 @@
 <script>
+import {CHARACTER_NUMBER_TABLE} from '@/data/data.js'
+
 export default {
   name: 'GameCharacterInfo',
-  props: ["characterName", "level"],
+  props: ["gameCharacterInfo"],
   data() {
-    return {
-      cardCharacterName: "재키",
-      cardCharacterLevel: 20
-    }
+    return {}
   },
-  computed:{
-    cardCharacterImageUrl(){
-      // TODO: 필요한 정보들 동적으로 가져올 수 있게 수정할 것
-      const charNum = "012"
-      return {backgroundImage: `url("${this.$ERCDN}/Character/${charNum}/1${charNum}001/mini.png")`}
+  computed: {
+    cardCharacterImageUrl() {
+      const charNum = this.gameCharacterInfo.characterNum.toString().padStart(3, '0')
+      return {backgroundImage: `url("${this.$ERCDN}/Character/${charNum}/${this.gameCharacterInfo.skinCode}/mini.png")`}
+    },
+    getCharacterName() {
+      return CHARACTER_NUMBER_TABLE[this.gameCharacterInfo.characterNum];
     }
   }
 }
@@ -21,9 +22,9 @@ export default {
 <template>
   <div class="game-character-info">
     <div :style="cardCharacterImageUrl" class="game-character">
-      <div class="game-character-level">{{ cardCharacterLevel }}</div>
+      <div class="game-character-level">{{ gameCharacterInfo.characterLevel }}</div>
     </div>
-    <div  class="game-character-name">{{ cardCharacterName }}</div>
+    <div class="game-character-name">{{ gameCharacterInfo.getCharacterName }}</div>
   </div>
 </template>
 
