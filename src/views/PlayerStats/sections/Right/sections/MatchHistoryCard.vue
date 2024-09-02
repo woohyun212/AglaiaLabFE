@@ -4,7 +4,7 @@
       <div class="background-cover">
         <GameInfo/>
         <GameCharacterInfo/>
-        <GameWeaponTacticSkillTrait/>
+        <GameWeaponTacticSkillTrait :game-weaapon-tactic-skill-trait="gameWeaponTacticSkillTrait"/>
         <GameInfoDetail :game-info-detail="gameInfoDetail"/>
         <GameItems :equipment="equipment"/>
       </div>
@@ -66,7 +66,20 @@ export default {
         mmrBefore: 4,
         mmrGain: 5,
         routeIdOfStart: 6
-      }
+      },
+      gameWeaponTacticSkillTrait: {
+        bestWeapon: 3,  // 무기
+        tacticalSkillGroup: 120, // 전술 스킬
+        traitFirstCore: 7200501, // 주특
+        traitFirstSub: [
+          7010901,
+          7110901
+        ],
+        traitSecondSub: [ // 보조 특성
+          7110801,
+          7110601
+        ],
+      },
     };
   },
   computed: {

@@ -1,40 +1,16 @@
 <script>
 export default {
   name: "GameWeaaponTacticSkillTrait",
-  props:["GameWeaaponTacticSkillTrait"],
-  data(){
-    return{
-      traitType:
-        {
-        "Havoc": {
-          "Core": [7000201, 7000401, 7000601, 7000701],
-          "Sub2": [7010311, 7010601, 7110901],
-          "Sub1": [7010501, 7010901, 7011001]
-        },
-        "Chaos": {
-          "Core": [7000501, 7300101, 7300201],
-          "Sub1": [7010701, 7310201, 7310401],
-          "Sub2": [7310101, 7310301, 7310501]
-        },
-        "Fortification": {
-          "Core": [7100101, 7100201, 7100401, 7100501],
-          "Sub1": [7110101, 7110701],
-          "Sub2": [7110201, 7110401, 7110601]
-        },
-        "Support": {
-          "Sub1": [7110801, 7210101, 7211001, 7211101],
-          "Core": [7200101, 7200201, 7200301, 7200501],
-          "Sub2": [7210401, 7210501, 7210801]
-        }
-      },
-      GameWeaaponTacticSkillTrait:{
-        bestWeapon: 3,
-        tacticalSkillGroup:120,
-      },
-    }
-  }
+  props: ["gameWeaaponTacticSkillTrait"],
+  data() {
+    return {}
+  },
+  computed: {
+    getTraitSubGroupCode() {
+      return this.$TRAIT_TABLE[this.gameWeaaponTacticSkillTrait.traitSecondSub[0]];
+    },
+  },
 }
-
 </script>
 
 <template>
@@ -43,25 +19,25 @@ export default {
       <div class="img-wrapper">
         <img
             alt="Weapon"
-            :src="`${$ERCDN}/WeaponGroup/${ this.GameWeaaponTacticSkillTrait.bestWeapon.toString().padStart(2, '0') }.png`"
+            :src="`${$ERCDN}/WeaponGroup/${ gameWeaaponTacticSkillTrait.bestWeapon.toString().padStart(2, '0') }.png`"
         />
       </div>
       <div class="img-wrapper">
         <img
             alt="Tactic Skill"
-            :src="`${$ERCDN}/TacticSkill/${ GameWeaaponTacticSkillTrait.tacticalSkillGroup }.png`"
+            :src="`${$ERCDN}/TacticSkill/${ gameWeaaponTacticSkillTrait.tacticalSkillGroup }.png`"
         />
       </div>
     </div>
     <div class="group-wrapper">
       <div class="img-wrapper">
         <img alt="Core Trait"
-             :src="`${$ERCDN}/Trait/7000401.png`"
+             :src="`${$ERCDN}/Trait/${ gameWeaaponTacticSkillTrait.traitFirstCore }.png`"
         />
       </div>
       <div class="img-wrapper">
         <img alt="Auxiliary Trait"
-             :src="`${$ERCDN}/Trait/7300000.png`"
+             :src="`${$ERCDN}/Trait/${ getTraitSubGroupCode }.png`"
         />
       </div>
     </div>
