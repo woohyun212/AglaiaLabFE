@@ -49,8 +49,7 @@ export default {
   <div class="game-info-detail">
     <div class="detail-box">
       <p class="data-name">TK / K / A</p>
-      <p class="played-data">{{ teamKill }} / {{ playerKill }} /
-        {{ playerAssistant }}</p>
+      <p class="played-data">{{ teamKill }} / {{ playerKill }} / {{ playerAssistant }}</p>
     </div>
     <div class="detail-box">
       <p class="data-name">딜량</p>
@@ -72,17 +71,19 @@ export default {
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   width: 40%;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding-left: 1%;
+  padding-right: 1%;
   height: 100%;
+  gap: 2%;
 }
 
 .detail-box {
   display: flex;
   flex-direction: column;
   gap: 2%;
+  width: fit-content;
   height: 100%;
   justify-content: center;
 

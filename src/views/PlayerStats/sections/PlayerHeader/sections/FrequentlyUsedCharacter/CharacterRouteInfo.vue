@@ -2,7 +2,7 @@
   <div class="character-route-info">
     <div class="character-route-info-header">
       <h1>루트 정보</h1>
-      <p class="route-info-title">루트 번호 6974747</p>
+      <p class="route-info-title">루트 번호 123124</p>
     </div>
 <!-- TODO: 1. 특성 그룹별로 나눠서 JSON 만들기
            2. 데이터에서 선택한 가져와서 선택한 특성 그룹 2개 가져옴

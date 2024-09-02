@@ -1,11 +1,30 @@
 <script>
 export default {
   name: "GameInfo",
-  props: ["gameRank", "matchingMode", "playTime", "startDtm"], //"preMadeMatchingType"],
+  props: ["gameRank", "matchingMode", "playTime", "startDtm", "escapeState"], //"preMadeMatchingType"],
   data() {
     return {}
   },
   computed: {
+    rankOrEscape() {
+      if (this.escapeState === 3) {
+        return "탈출"
+      }
+      return this.gameRank
+    },
+    rankFontColor() {
+      if (this.escapeState === 3) {
+        return {background: "var(--escape-bg-color)", backgroundClip: "text"};
+      } else if (this.gameRank === 1) {
+        return {background: "var(--1st-bg-gradient)", backgroundClip: "text"};
+      } else if (this.gameRank === 2) {
+        return {background: "var(--2nd-bg-gradient)", backgroundClip: "text"};
+      } else if (this.gameRank === 3) {
+        return {background: "var(--3rd-bg-gradient)", backgroundClip: "text"};
+      } else {
+        return {background: "var(--base-bg-color)", backgroundClip: "text"};
+      }
+    },
     matchingModeToString() {
       return this.matchingMode === 2 ? "일반" : this.matchingMode === 3 ? "랭크" : undefined;
     },
@@ -44,7 +63,7 @@ export default {
 
 <template>
   <div class="game-info">
-    <div class="game-ranking">#{{ gameRank }}</div>
+    <div class="game-ranking" :style="rankFontColor">#{{ rankOrEscape }}</div>
     <div class="game-type">{{ matchingModeToString }}</div>
     <div class="game-time-info">{{ formattedPlayTime }}</div>
     <div class="game-time-info">{{ lastPlayedAgo }}</div>
@@ -65,14 +84,12 @@ export default {
 
 .game-ranking {
   -webkit-text-fill-color: transparent;
-  background: linear-gradient(180deg, rgb(196, 159, 70) 0%, rgb(255, 252, 163) 100%);
-  background-clip: text;
   color: transparent;
   font-family: "Inter", Helvetica;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0;
-  line-height: 1.2rem;
+  line-height: 1rem;
   text-shadow: 0 0 2px #00000040;
   white-space: nowrap;
   margin-bottom: 5%;

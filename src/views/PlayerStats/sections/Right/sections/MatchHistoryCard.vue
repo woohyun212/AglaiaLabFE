@@ -1,13 +1,14 @@
 <template>
   <div>
-    <div class="match-history-card">
+    <div :style="cardBackgroundColor" class="match-history-card">
       <div class="background-cover">
-        <GameInfo :game-rank="gameRank" :matching-mode="matchingMode" :play-time="playTime" :start-dtm="startDtm"/>
+        <GameInfo :game-rank="gameRank" :matching-mode="matchingMode" :play-time="playTime" :start-dtm="startDtm"
+                  :escape-state="escapeState"/>
         <GameCharacterInfo :character-level="characterLevel" :character-num="characterNum" :skin-code="skinCode"/>
         <GameWeaponTacticSkillTrait :best-weapon="bestWeapon" :tactical-skill-group="tacticalSkillGroup"
                                     :trait-first-core="traitFirstCore" :trait-first-sub="traitFirstSub"
                                     :trait-second-sub="traitSecondSub"/>
-        <GameInfoDetail :="teamKill" :player-kill="playerKill" :player-assistant="playerAssistant"
+        <GameInfoDetail :team-kill="teamKill" :player-kill="playerKill" :player-assistant="playerAssistant"
                         :damage-to-player="damageToPlayer" :mmr-before="mmrBefore" :mmr-gain="mmrGain"
                         :route-id-of-start="routeIdOfStart"/>
         <GameItems :equipment="equipment"/>
@@ -30,7 +31,7 @@
         </svg>
       </button>
     </div>
-    <div :style="DetailDivStyle" class="more-info">
+    <div :style="detailButtonAnimation" class="more-info">
       <p>
         기능이 개발 중 입니다..!<br/><br/>
         추가 정보가 여기에 표시됩니다.
@@ -64,13 +65,14 @@ export default {
         "4": 204413
       },
       // gameInfoDetail
-      teamKill: 0,
-      playerKill: 1,
-      playerAssistant: 2,
-      damageToPlayer: 3,
-      mmrBefore: 4,
-      mmrGain: 5,
-      routeIdOfStart: 6,
+      teamKill: 24,
+      playerKill: 23,
+      playerAssistant: 22,
+      damageToPlayer: 30000,
+      mmrBefore: 10000,
+      mmrGain: 256,
+      routeIdOfStart: 54321,
+
       // gameWeaponTacticSkillTrait
 
       bestWeapon: 3,  // 무기
@@ -90,20 +92,37 @@ export default {
       skinCode: 1027001,
 
       // GameInfo
-      gameRank: 1,
+      gameRank: 1, // 게임 등수
+      escapeState: 0, // 탈출 여부
       matchingMode: 3, // 2:일반 , 3:랭크
       preMadeMatchingType: 3, // 사전 구성 타입
       playTime: 957000, // 유저의 플레이 시간. (초)
-      startDtm: 1725173200000 // 서버의 게임 시작 시간.
-
+      startDtm: 1725173200000, // 서버의 게임 시작 시간.
     };
   },
   computed: {
-    DetailDivStyle() {
+    detailButtonAnimation() {
       return {
         maxHeight: this.isDetailsVisible ? '500px' : '0px',
         transition: 'max-height 0.3s ease-in-out, padding 0.3s ease-in-out' // 버튼과 동일한 시간과 타이밍 함수로 설정
       };
+    },
+
+    cardBackgroundColor() {
+      if (this.escapeState === 3) {
+        return {background: "var(--escape-bg-color)"}
+      } else if (this.gameRank === 1) {
+        return {background: "var(--1st-bg-gradient)"}
+      } else if (this.gameRank === 2) {
+        return {background: "var(--2nd-bg-gradient)"}
+      } else if (this.gameRank === 3) {
+        return {background: "var(--3rd-bg-gradient)"}
+      } else {
+        return {background: "var(--base-bg-color)"}
+      }
+    },
+    isEscape(){
+      return this.escapeState === 3;
     }
   },
   methods: {
@@ -116,12 +135,6 @@ export default {
 
 <style scoped>
 .match-history-card {
-  --1st-bg-gradient: linear-gradient(180deg, rgb(255, 252, 163) 0%, rgb(196, 159, 70) 100%);
-  --2nd-bg-gradient: linear-gradient(180deg, rgb(235, 235, 235) 0%, rgb(133, 133, 133) 100%);
-  --3rd-bg-gradient: linear-gradient(180deg, rgb(196, 152, 87) 0%, rgb(94, 73, 42) 100%);
-  --else-bg-color: #d9d9d9;
-  --escape-bg-color: #009262;
-  background: var(--1st-bg-gradient);
   border-radius: 4px;
   box-shadow: 0px 0px 4px #00000040;
   height: 90px;
