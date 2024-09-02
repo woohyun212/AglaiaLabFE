@@ -2,64 +2,26 @@
   <div class="character-route-info">
     <div class="character-route-info-header">
       <h1>루트 정보</h1>
-      <p class="route-info-title">루트 번호 123124</p>
+<!--      Deprecated. 루트ID 가 비공개일 수 있는데 이는 어떻게 할지-->
+<!--      <p class="route-info-title">루트 번호 123124</p>-->
     </div>
-<!-- TODO: 1. 특성 그룹별로 나눠서 JSON 만들기
-           2. 데이터에서 선택한 가져와서 선택한 특성 그룹 2개 가져옴
-           3. un / selected 반영-->
     <div class="trait">
       <div class="trait-box">
-        <div class="trait-line">
-          <img class="trait-img selected" alt="trait-first-core"
-               :src="`${$ERCDN}/Trait/7000201.png`"/>
-          <img class="trait-img unselected" alt="trait-first-core"
-               :src="`${$ERCDN}/Trait/7000201.png`"/>
-          <img class="trait-img unselected" alt="trait-first-core"
-               :src="`${$ERCDN}/Trait/7000201.png`"/>
-          <img class="trait-img unselected" alt="trait-first-core"
-               :src="`${$ERCDN}/Trait/7000201.png`"/>
-        </div>
-        <div class="trait-line">
-          <img class="trait-img unselected" alt="trait-sub"
-               :src="`${$ERCDN}/Trait/7000201.png`"/>
-          <img class="trait-img selected" alt="trait-sub"
-               :src="`${$ERCDN}/Trait/7000201.png`"/>
-          <img class="trait-img unselected" alt="trait-sub"
-               :src="`${$ERCDN}/Trait/7000201.png`"/>
-        </div>
-        <div class="trait-line">
-          <img class="trait-img unselected" alt="trait-sub" :src="`${$ERCDN}/Trait/7000201.png`"/>
-          <img class="trait-img unselected" alt="trait-sub"
-               :src="`${$ERCDN}/Trait/7000201.png`"/>
-          <img class="trait-img selected" alt="trait-sub"
-               :src="`${$ERCDN}/Trait/7000201.png`"/>
+        <div v-for="(items, category) in getTraitFirstGroup" :key="category" class="trait-line">
+          <img v-for="traitId in items" :key="traitId" :style="getTraitStyle(traitId)" class="trait-img" :alt="traitId"
+               :src="`${$ERCDN}/Trait/${traitId}.png`"/>
         </div>
       </div>
-
       <div class="trait-box">
         <div class="weapon-tactic-skill trait-line">
           <img class="weapon" alt="weapon"
-               :src="`${$ERCDN}/WeaponGroup/Pistol.png`"/>
+               :src="`${$ERCDN}/WeaponGroup/${ bestWeapon.toString().padStart(2, '0') }.png`"/>
           <img class="tactic-skill" alt="tactic-skill"
-               :src="`${$ERCDN}/TacticSkill/4000000.png`"/>
+               :src="`${$ERCDN}/TacticSkill/${ tacticalSkillGroup }.png`"/>
         </div>
-        <div class="trait-line">
-          <img class="trait-img unselected" alt="trait-sub"
-               :src="`${$ERCDN}/Trait/7310401.png`"/>
-          <img class="trait-img selected" alt="trait-sub"
-               :src="`${$ERCDN}/Trait/7310401.png`"/>
-          <img class="trait-img unselected" alt="trait-sub"
-               :src="`${$ERCDN}/Trait/7310401.png`"/>
-          <img class="trait-img unselected" alt="trait-sub"
-               :src="`${$ERCDN}/Trait/7310401.png`"/>
-        </div>
-        <div class="trait-line">
-          <img class="trait-img unselected" alt="trait-sub"
-               :src="`${$ERCDN}/Trait/7310401.png`"/>
-          <img class="trait-img unselected" alt="trait-sub"
-               :src="`${$ERCDN}/Trait/7310401.png`"/>
-          <img class="trait-img selected" alt="trait-sub"
-               :src="`${$ERCDN}/Trait/7310401.png`"/>
+        <div v-for="(items, category) in getTraitSecondGroup" :key="category" class="trait-line">
+          <img v-if="category !== 'core' " v-for="traitId in items" :key="traitId" :style="getTraitStyle(traitId)" class="trait-img" :alt="traitId"
+               :src="`${$ERCDN}/Trait/${traitId}.png`"/>
         </div>
       </div>
     </div>
@@ -67,8 +29,32 @@
 </template>
 
 <script>
+import {TRAIT_GROUP, TRAIT_TABLE} from '@/data/data.js'
+
 export default {
   name: "CharacterRouteInfo",
+  props: ["bestWeapon", "tacticalSkillGroup", "traitFirstCore", "traitFirstSub", "traitSecondSub"],
+  data() {
+    return {}
+  },
+  computed: {
+    getTraitFirstGroup() {
+      return TRAIT_GROUP[TRAIT_TABLE[this.traitFirstCore]];
+    },
+    getTraitSecondGroup() {
+      return TRAIT_GROUP[TRAIT_TABLE[this.traitSecondSub[0]]];
+    }
+  },
+  methods: {
+    getTraitStyle(traitId) {
+      // 조건에 따라 다른 스타일 반환
+      if (traitId === this.traitFirstCore || this.traitFirstSub.includes(traitId) || this.traitSecondSub.includes(traitId)) {
+        return {filter: "brightness(1.2) contrast(1.2) saturate(1.2)"};
+      } else {
+        return {filter: "brightness(5) contrast(0.8) saturate(0)"};
+      }
+    }
+  },
 }
 </script>
 
@@ -159,13 +145,5 @@ export default {
 .trait-line img {
   width: 20%;
   object-fit: contain;
-}
-
-.unselected {
-  filter: brightness(5) contrast(0.8) saturate(0);
-}
-
-.selected {
-  filter: brightness(1.2) contrast(1.2) saturate(1.2);
 }
 </style>
