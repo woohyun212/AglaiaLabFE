@@ -2,8 +2,8 @@
   <div>
     <div class="match-history-card">
       <div class="background-cover">
-        <GameInfo/>
-        <GameCharacterInfo/>
+        <GameInfo :gameInfo="gameInfo"/>
+        <GameCharacterInfo :game-character-info="gameCharacterInfo"/>
         <GameWeaponTacticSkillTrait :game-weaapon-tactic-skill-trait="gameWeaponTacticSkillTrait"/>
         <GameInfoDetail :game-info-detail="gameInfoDetail"/>
         <GameItems :equipment="equipment"/>
@@ -80,6 +80,19 @@ export default {
           7110601
         ],
       },
+      gameCharacterInfo: {
+        characterNum: 27,
+        characterLevel: 15,
+        skinCode: 1027001,
+      },
+      gameInfo: {
+        gameRank: 1,
+        matchingMode: 3, // 2:일반 , 3:랭크
+        preMadeMatchingType: 3, // 사전 구성 타입
+        playTime: 957000, // 유저의 플레이 시간. (초)
+        startDtm: 1725173200000 // 서버의 게임 시작 시간.
+      }
+
     };
   },
   computed: {

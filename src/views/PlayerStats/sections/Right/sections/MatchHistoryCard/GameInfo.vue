@@ -1,33 +1,23 @@
 <script>
 export default {
   name: "GameInfo",
-  // props: ["GameInfo"],
+  props: ["gameInfo","gameRank","matchingMode","playTime","startDtm","preMadeMatchingType"],
   data() {
-    return {
-      GameInfo: {
-        gameRank: 1,
-        matchingMode: 3, // 2:일반 , 3:랭크
-        preMadeMatchingType: 3, // 사전 구성 타입
-        playTime: 957000, // 유저의 플레이 시간. (초)
-        startDtm: 1724173200000 // 서버의 게임 시작 시간.
-      }
-    }
+    return {}
   },
   computed: {
-    // TODO: Implement data fetch code
-    // const GameInfo = props.GameInfo
-    matchingMode() {
-      return this.GameInfo.matchingMode === 2 ? "일반" : this.GameInfo.matchingMode === 3 ? "랭크" : undefined;
+    matchingModeToString() {
+      return this.gameInfo.matchingMode === 2 ? "일반" : this.gameInfo.matchingMode === 3 ? "랭크" : undefined;
     },
     formattedPlayTime() {
-      const totalSeconds = Math.floor(this.GameInfo.playTime / 1000); // 밀리초를 초 단위로 변환
+      const totalSeconds = Math.floor(this.gameInfo.playTime / 1000); // 밀리초를 초 단위로 변환
       const minutes = Math.floor(totalSeconds / 60);
       const seconds = totalSeconds % 60;
       return `${String(minutes).padStart(2, '0')}분 ${String(seconds).padStart(2, '0')}초`;
     },
     lastPlayedAgo() {
       const now = Date.now();
-      const diffInMillis = now - this.GameInfo.startDtm;
+      const diffInMillis = now - this.gameInfo.startDtm;
       const diffInSeconds = Math.floor(diffInMillis / 1000);
       const diffInMinutes = Math.floor(diffInSeconds / 60);
       const diffInHours = Math.floor(diffInMinutes / 60);
@@ -42,7 +32,7 @@ export default {
       } else if (diffInDays <= 6) { // 6일 이하라면 "n일 전"으로 반환
         return `${diffInDays}일 전`;
       } else { // 6일 이상이면 "a월 b일"로 반환
-        const date = new Date(this.GameInfo.startDtm);
+        const date = new Date(this.gameInfo.startDtm);
         const month = date.getMonth() + 1; // 월은 0부터 시작하므로 +1
         const day = date.getDate();
         return `${month}월 ${day}일`;
@@ -54,8 +44,8 @@ export default {
 
 <template>
   <div class="game-info">
-    <div class="game-ranking">#{{ GameInfo.gameRank }}</div>
-    <div class="game-type">{{ matchingMode }}</div>
+    <div class="game-ranking">#{{ gameInfo.gameRank }}</div>
+    <div class="game-type">{{ matchingModeToString }}</div>
     <div class="game-time-info">{{ formattedPlayTime }}</div>
     <div class="game-time-info">{{ lastPlayedAgo }}</div>
   </div>
