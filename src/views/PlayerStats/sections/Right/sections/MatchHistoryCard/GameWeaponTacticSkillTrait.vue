@@ -1,15 +1,16 @@
 <script>
 
-import { TRAIT_TABLE } from '@/data/data.js'
+import {TRAIT_TABLE} from '@/data/data.js'
+
 export default {
   name: "GameWeaaponTacticSkillTrait",
-  props: ["gameWeaaponTacticSkillTrait"],
+  props: ["bestWeapon", "tacticalSkillGroup", "traitFirstCore", "traitFirstSub", "traitSecondSub"],
   data() {
     return {}
   },
   computed: {
     getTraitSubGroupCode() {
-      return TRAIT_TABLE[this.gameWeaaponTacticSkillTrait.traitSecondSub[0]];
+      return TRAIT_TABLE[this.traitSecondSub[0]];
     },
   },
 }
@@ -21,20 +22,20 @@ export default {
       <div class="img-wrapper">
         <img
             alt="Weapon"
-            :src="`${$ERCDN}/WeaponGroup/${ gameWeaaponTacticSkillTrait.bestWeapon.toString().padStart(2, '0') }.png`"
+            :src="`${$ERCDN}/WeaponGroup/${ bestWeapon.toString().padStart(2, '0') }.png`"
         />
       </div>
       <div class="img-wrapper">
         <img
             alt="Tactic Skill"
-            :src="`${$ERCDN}/TacticSkill/${ gameWeaaponTacticSkillTrait.tacticalSkillGroup }.png`"
+            :src="`${$ERCDN}/TacticSkill/${ tacticalSkillGroup }.png`"
         />
       </div>
     </div>
     <div class="group-wrapper">
       <div class="img-wrapper">
         <img alt="Core Trait"
-             :src="`${$ERCDN}/Trait/${ gameWeaaponTacticSkillTrait.traitFirstCore }.png`"
+             :src="`${$ERCDN}/Trait/${ traitFirstCore }.png`"
         />
       </div>
       <div class="img-wrapper">

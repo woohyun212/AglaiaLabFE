@@ -1,18 +1,16 @@
 <script>
 export default {
   name: 'GameInfoDetail',
-  props: ["gameInfoDetail"],
+  props: ["teamKill", "playerKill", "playerAssistant", "damageToPlayer", "mmrBefore", "mmrGain", "routeIdOfStart"],
   data() {
-    return {
-
-    }
+    return {}
   },
   computed: {
     upDownColor() {
       let color;
-      if (this.gameInfoDetail.mmrGain > 0) {
+      if (this.mmrGain > 0) {
         color = 'red';
-      } else if (this.gameInfoDetail.mmrGain < 0) {
+      } else if (this.mmrGain < 0) {
         color = 'blue';
       } else {
         color = 'gray';
@@ -25,8 +23,8 @@ export default {
         letterSpacing: 0,
       };
     },
-    mmrGain() {
-      const mmrGain = this.gameInfoDetail.mmrGain;
+    mmrGainWithSign() {
+      const mmrGain = this.mmrGain;
       if (mmrGain > 0) {
         return `+${mmrGain}`;
       } else if (mmrGain < 0) {
@@ -36,8 +34,8 @@ export default {
       }
     },
     routeId() {
-      if (this.gameInfoDetail.routeIdOfStart) {
-        return this.gameInfoDetail.routeIdOfStart;
+      if (this.routeIdOfStart) {
+        return this.routeIdOfStart;
       } else {
         return "비공개";
       }
@@ -51,16 +49,16 @@ export default {
   <div class="game-info-detail">
     <div class="detail-box">
       <p class="data-name">TK / K / A</p>
-      <p class="played-data">{{ gameInfoDetail.teamKill }} / {{ gameInfoDetail.playerKill }} /
-        {{ gameInfoDetail.playerAssistant }}</p>
+      <p class="played-data">{{ teamKill }} / {{ playerKill }} /
+        {{ playerAssistant }}</p>
     </div>
     <div class="detail-box">
       <p class="data-name">딜량</p>
-      <p class="played-data">{{ gameInfoDetail.damageToPlayer }}</p>
+      <p class="played-data">{{ damageToPlayer }}</p>
     </div>
     <div class="detail-box">
       <p class="data-name">RP</p>
-      <p class="played-data">{{ gameInfoDetail.mmrBefore }} <span :style="upDownColor">{{ mmrGain }}</span></p>
+      <p class="played-data">{{ mmrBefore }} <span :style="upDownColor">{{ mmrGainWithSign }}</span></p>
     </div>
     <div class="detail-box">
       <p class="data-name">루트 ID</p>

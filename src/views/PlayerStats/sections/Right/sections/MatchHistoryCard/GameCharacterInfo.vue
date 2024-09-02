@@ -3,17 +3,17 @@ import {CHARACTER_NUMBER_TABLE} from '@/data/data.js'
 
 export default {
   name: 'GameCharacterInfo',
-  props: ["gameCharacterInfo"],
+  props: ["characterLevel", "characterNum", "skinCode"],
   data() {
     return {}
   },
   computed: {
     cardCharacterImageUrl() {
-      const charNum = this.gameCharacterInfo.characterNum.toString().padStart(3, '0')
-      return {backgroundImage: `url("${this.$ERCDN}/Character/${charNum}/${this.gameCharacterInfo.skinCode}/mini.png")`}
+      const charNum = this.characterNum.toString().padStart(3, '0')
+      return {backgroundImage: `url("${this.$ERCDN}/Character/${charNum}/${this.skinCode}/mini.png")`}
     },
     getCharacterName() {
-      return CHARACTER_NUMBER_TABLE[this.gameCharacterInfo.characterNum];
+      return CHARACTER_NUMBER_TABLE[this.characterNum];
     }
   }
 }
@@ -22,9 +22,9 @@ export default {
 <template>
   <div class="game-character-info">
     <div :style="cardCharacterImageUrl" class="game-character">
-      <div class="game-character-level">{{ gameCharacterInfo.characterLevel }}</div>
+      <div class="game-character-level">{{ characterLevel }}</div>
     </div>
-    <div class="game-character-name">{{ gameCharacterInfo.getCharacterName }}</div>
+    <div class="game-character-name">{{ getCharacterName }}</div>
   </div>
 </template>
 

@@ -2,10 +2,14 @@
   <div>
     <div class="match-history-card">
       <div class="background-cover">
-        <GameInfo :gameInfo="gameInfo"/>
-        <GameCharacterInfo :game-character-info="gameCharacterInfo"/>
-        <GameWeaponTacticSkillTrait :game-weaapon-tactic-skill-trait="gameWeaponTacticSkillTrait"/>
-        <GameInfoDetail :game-info-detail="gameInfoDetail"/>
+        <GameInfo :game-rank="gameRank" :matching-mode="matchingMode" :play-time="playTime" :start-dtm="startDtm"/>
+        <GameCharacterInfo :character-level="characterLevel" :character-num="characterNum" :skin-code="skinCode"/>
+        <GameWeaponTacticSkillTrait :best-weapon="bestWeapon" :tactical-skill-group="tacticalSkillGroup"
+                                    :trait-first-core="traitFirstCore" :trait-first-sub="traitFirstSub"
+                                    :trait-second-sub="traitSecondSub"/>
+        <GameInfoDetail :="teamKill" :player-kill="playerKill" :player-assistant="playerAssistant"
+                        :damage-to-player="damageToPlayer" :mmr-before="mmrBefore" :mmr-gain="mmrGain"
+                        :route-id-of-start="routeIdOfStart"/>
         <GameItems :equipment="equipment"/>
       </div>
       <button @click="toggleDetails">
@@ -51,6 +55,7 @@ export default {
     return {
       isDetailsVisible: false,
 
+      // GameItems
       equipment: {
         "0": 110412,
         "1": 202512,
@@ -58,40 +63,38 @@ export default {
         "3": 203503,
         "4": 204413
       },
-      gameInfoDetail: {
-        teamKill: 0,
-        playerKill: 1,
-        playerAssistant: 2,
-        damageToPlayer: 3,
-        mmrBefore: 4,
-        mmrGain: 5,
-        routeIdOfStart: 6
-      },
-      gameWeaponTacticSkillTrait: {
-        bestWeapon: 3,  // 무기
-        tacticalSkillGroup: 120, // 전술 스킬
-        traitFirstCore: 7200501, // 주특
-        traitFirstSub: [
-          7010901,
-          7110901
-        ],
-        traitSecondSub: [ // 보조 특성
-          7110801,
-          7110601
-        ],
-      },
-      gameCharacterInfo: {
-        characterNum: 27,
-        characterLevel: 15,
-        skinCode: 1027001,
-      },
-      gameInfo: {
-        gameRank: 1,
-        matchingMode: 3, // 2:일반 , 3:랭크
-        preMadeMatchingType: 3, // 사전 구성 타입
-        playTime: 957000, // 유저의 플레이 시간. (초)
-        startDtm: 1725173200000 // 서버의 게임 시작 시간.
-      }
+      // gameInfoDetail
+      teamKill: 0,
+      playerKill: 1,
+      playerAssistant: 2,
+      damageToPlayer: 3,
+      mmrBefore: 4,
+      mmrGain: 5,
+      routeIdOfStart: 6,
+      // gameWeaponTacticSkillTrait
+
+      bestWeapon: 3,  // 무기
+      tacticalSkillGroup: 120, // 전술 스킬
+      traitFirstCore: 7200501, // 주특
+      traitFirstSub: [
+        7010901,
+        7110901
+      ],
+      traitSecondSub: [ // 보조 특성
+        7110801,
+        7110601
+      ],
+      // gameCharacterInfo
+      characterNum: 27,
+      characterLevel: 15,
+      skinCode: 1027001,
+
+      // GameInfo
+      gameRank: 1,
+      matchingMode: 3, // 2:일반 , 3:랭크
+      preMadeMatchingType: 3, // 사전 구성 타입
+      playTime: 957000, // 유저의 플레이 시간. (초)
+      startDtm: 1725173200000 // 서버의 게임 시작 시간.
 
     };
   },
@@ -115,7 +118,7 @@ export default {
 .match-history-card {
   --1st-bg-gradient: linear-gradient(180deg, rgb(255, 252, 163) 0%, rgb(196, 159, 70) 100%);
   --2nd-bg-gradient: linear-gradient(180deg, rgb(235, 235, 235) 0%, rgb(133, 133, 133) 100%);
-  --3rd-bg-gradient:  linear-gradient(180deg, rgb(196, 152, 87) 0%, rgb(94, 73, 42) 100%);
+  --3rd-bg-gradient: linear-gradient(180deg, rgb(196, 152, 87) 0%, rgb(94, 73, 42) 100%);
   --else-bg-color: #d9d9d9;
   --escape-bg-color: #009262;
   background: var(--1st-bg-gradient);
