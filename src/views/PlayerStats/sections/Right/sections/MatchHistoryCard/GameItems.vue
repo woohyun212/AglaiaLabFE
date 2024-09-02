@@ -45,7 +45,6 @@ export default {
   background-position: 50% 50%;
   background-size: cover;
   border-radius: 2px;
-  height: 27px;
   width: 49px;
 }
 

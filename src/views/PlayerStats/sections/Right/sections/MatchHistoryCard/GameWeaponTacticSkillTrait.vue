@@ -53,7 +53,7 @@ export default {
   flex-direction: row;
   justify-content: space-evenly;
   height: 100%;
-  margin-left: 2%;
+  margin-left: 1%;
   width: 9%;
 }
 
