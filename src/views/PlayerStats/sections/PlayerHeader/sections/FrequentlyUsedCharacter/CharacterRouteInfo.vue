@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import {TRAIT_GROUP, TRAIT_TABLE} from '@/data/data.js'
+import {TRAIT_GROUP, TRAIT_TABLE} from '@/data'
 
 export default {
   name: "CharacterRouteInfo",

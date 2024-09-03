@@ -2,10 +2,10 @@
   <div class="stats-info">
     <RankOverview/>
     <hr/>
-    <Stats type="rank"/>
+    <Stats id="rank"/>
     <hr/>
     <h2 class="player-info-subtitle">실험체 통계</h2>
-    <Stats type="character"/>
+    <Stats id="character"/>
   </div>
 </template>
 

@@ -2,8 +2,8 @@
   <li class="character-card"
       v-bind:style="backgroundStyle"
       :class="{ clicked: isClicked }"
-      @click="$emit('click')"
   />
+<!--      @click="$emit('click')"-->
 </template>
 
 <script>
@@ -25,14 +25,8 @@ export default {
   },
   computed: {
     backgroundStyle() {
-      // 배포 시 주석 처리 할 것 (deprecate)
-      // const characterImageUrl = '../../../../../../../'.concat(this.characterImageUrl);
-      // console.log(this.characterImageUrl);
       return {
-        // 개발할 때 사용 (deprecate)
-        // backgroundImage: `url(${new URL(characterImageUrl, import.meta.url)})`
-        // http 주소로 가져올 수 있으면 아래의 것으로 사용
-        backgroundImage: `url(${this.characterImageUrl})`
+        backgroundImage: `url(${this.$ERCDN}/${this.characterImageUrl})`
       };
     }
   }
@@ -49,7 +43,6 @@ export default {
   width: 16.5%;
   border: rgba(0, 0, 0, 0) 2px solid;
   transition: width 0.3s ease, height 0.3s ease, border 0.3s ease;
-  /*object-fit: cover;*/
 }
 
 .character-card:hover {

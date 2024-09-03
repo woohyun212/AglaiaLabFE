@@ -1,5 +1,5 @@
 <script>
-import {CHARACTER_NUMBER_TABLE} from '@/data/data.js'
+import {CHARACTER_NUMBER_TABLE} from '@/data'
 
 export default {
   name: 'GameCharacterInfo',
