@@ -3,17 +3,16 @@
     <div class="player-info-subtitle">자주 사용하는 실험체</div>
     <ol class="character-list">
       <CharacterCard
-          v-for="(item, index) in characterStats"
-          :character-name="item.characterName"
-          :character-image-url="item.characterImageUrl"
+          v-for="(item, index) in playerStats.characterStats"
+          :character-code="item.characterCode"
           :key="index"
           :isClicked="selectedCharacterIndex === index"
           @click="updateSelectedCharacterIndex(index)"
       />
     </ol>
-    <CharacterRouteInfo :best-weapon="characterStats[selectedCharacterIndex].bestWeapon" :tactical-skill-group="characterStats[selectedCharacterIndex].tacticalSkillGroup"
-                        :trait-first-core="characterStats[selectedCharacterIndex].traitFirstCore" :trait-first-sub="characterStats[selectedCharacterIndex].traitFirstSub"
-                        :trait-second-sub="characterStats[selectedCharacterIndex].traitSecondSub"/>
+    <CharacterRouteInfo :best-weapon="selectedCharacterStats.bestWeapon" :tactical-skill-group="selectedCharacterStats.tacticalSkillGroup"
+                        :trait-first-core="selectedCharacterStats.traitFirstCore" :trait-first-sub="selectedCharacterStats.traitFirstSub"
+                        :trait-second-sub="selectedCharacterStats.traitSecondSub"/>
   </div>
 </template>
 
@@ -29,8 +28,8 @@ export default {
   components: {CharacterRouteInfo, CharacterCard},
 
   computed:{
-    ...mapState(["characterStats"]),
-    ...mapGetters(["selectedCharacterIndex"]),
+    ...mapState(["playerStats"]),
+    ...mapGetters(["selectedCharacterIndex","selectedCharacterStats"]),
   },
   methods: {
     ...mapActions(["updateSelectedCharacterIndex"]),

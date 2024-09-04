@@ -30,6 +30,7 @@ export default {
   display: flex !important;
   height: 32px !important;;
   width: 78px !important;
+  margin-bottom: 8px;
 }
 .design-component-instance-node {
   color: var(--color-text-neutral-on-neutral) !important;
@@ -39,10 +40,6 @@ export default {
   font-weight: 400 !important;
   letter-spacing: 0 !important;
   line-height: 16px !important;
-  margin-bottom: -3px !important;
-  margin-left: -2.5px !important;
-  margin-right: -2.5px !important;
-  margin-top: -5px !important;
 }
 
 </style>

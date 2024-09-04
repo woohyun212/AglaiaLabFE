@@ -1,16 +1,21 @@
 <template>
   <div class="rank-overview">
-    <p class="mmr">10301 RP</p>
+    <p class="mmr">{{ playerStats.mmr }} RP</p>
     <div class="tier">
-      <p>이터니티 - 3308 RP</p>
-      <p>랭크 1위 (상위 0.01%)</p>
+      <p>이터니티 - {{ playerStats.tireMmr }} RP</p>
+      <p>랭크 {{ playerStats.rank }}위 (상위 {{ playerStats.rankPercent }}%)</p>
     </div>
   </div>
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
   name: "RankOverview",
+  computed: {
+    ...mapState(["playerStats"]),
+  }
 };
 </script>
 
@@ -24,13 +29,12 @@ export default {
 .rank-overview .mmr {
   color: #abdb64;
   font-family: "Noto Sans KR", Helvetica;
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   font-weight: var(--noto-sans-kr-font-weight-bold);
   letter-spacing: 0;
-  line-height: 2rem;
+  line-height: 2.5rem;
   text-shadow: 4px 4px 4px #00000040;
   white-space: nowrap;
-  margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
 
@@ -39,7 +43,7 @@ export default {
   flex-direction: column;
 }
 
-.rank-overview .tier p{
+.rank-overview .tier p {
   color: #000000;
   font-family: "Noto Sans KR", Helvetica, serif;
   font-size: 1rem;

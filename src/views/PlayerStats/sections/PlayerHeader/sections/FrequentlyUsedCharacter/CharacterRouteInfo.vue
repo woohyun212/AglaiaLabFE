@@ -1,9 +1,9 @@
 <template>
   <div class="character-route-info">
     <div class="character-route-info-header">
-      <h1>루트 정보</h1>
-<!--      Deprecated. 루트ID 가 비공개일 수 있는데 이는 어떻게 할지-->
-<!--      <p class="route-info-title">루트 번호 123124</p>-->
+      <h1>고승률 빌드</h1>
+      <!--      Deprecated. 루트ID 가 비공개일 수 있는데 이는 어떻게 할지-->
+      <!--      <p class="route-info-title">루트 번호 123124</p>-->
     </div>
     <div class="trait">
       <div class="trait-box">
@@ -20,11 +20,13 @@
                :src="`${$ERCDN}/TacticSkill/${ tacticalSkillGroup }.png`"/>
         </div>
         <div v-for="(items, category) in getTraitSecondGroup" :key="category" class="trait-line">
-          <img v-if="category !== 'core' " v-for="traitId in items" :key="traitId" :style="getTraitStyle(traitId)" class="trait-img" :alt="traitId"
+          <img v-if="category !== 'core' " v-for="traitId in items" :key="traitId" :style="getTraitStyle(traitId)"
+               class="trait-img" :alt="traitId"
                :src="`${$ERCDN}/Trait/${traitId}.png`"/>
         </div>
       </div>
     </div>
+    <div style="width:100%;height:100%;display: flex;justify-content: center; align-items: center"> [ ]  [ ]  [ ]  [ ]  [ ]</div>
   </div>
 </template>
 
@@ -42,7 +44,8 @@ export default {
       return TRAIT_GROUP[TRAIT_TABLE[this.traitFirstCore]];
     },
     getTraitSecondGroup() {
-      return TRAIT_GROUP[TRAIT_TABLE[this.traitSecondSub[0]]];
+      const {core, ...rest} = TRAIT_GROUP[TRAIT_TABLE[this.traitSecondSub[0]]];
+      return rest
     }
   },
   methods: {
@@ -74,7 +77,7 @@ export default {
   white-space: nowrap;
   line-height: 1.5rem;
   margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 1.2rem;
   align-items: flex-end
 }
 
@@ -98,7 +101,6 @@ export default {
 .trait {
   display: flex;
   flex-direction: row;
-  height: 100%;
 }
 
 .weapon-tactic-skill {
@@ -128,7 +130,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5%;
+  gap: 15px;
 
 }
 

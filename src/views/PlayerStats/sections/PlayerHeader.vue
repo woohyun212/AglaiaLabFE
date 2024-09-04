@@ -1,12 +1,13 @@
 <template>
   <div class="player-header">
-<!--    <img class="character-image" alt="Character image" src="https://c.animaapp.com/SjFnLgAk/img/&#45;&#45;&#45;&#45;.png"/>-->
-    <img class="character-image"
-      :src="`${$ERCDN}/Character/065/1065002/full.png`" height="2048"
-      width="2048"/>
+    <div class="image-container">
+      <img ref="animatedDiv" class="character-image"
+           :src="`${$ERCDN}/Character/${ formattedSelectedCharacterNumber }/${ selectedCharacterStats.mostUsedSkinCode }/full.png`"
+           style=""/>
+    </div>
     <div class="player-header-cover"/>
     <div class="info">
-      <div class="player-name"><h1>김현우</h1>
+      <div class="player-name"><h1>{{ playerStats.nickname }}</h1>
         <ButtonWrapper/>
       </div>
       <div style="display: flex; flex-direction: row;width: 100%;height: 100%;">
@@ -23,6 +24,7 @@
 import ButtonWrapper from "@/views/PlayerStats/sections/ButtonWrapper.vue";
 import StatsInfo from "@/views/PlayerStats/sections/PlayerHeader/sections/StatsInfo.vue";
 import FrequentlyUsedCharacter from "@/views/PlayerStats/sections/PlayerHeader/sections/FrequentlyUsedCharacter.vue";
+import {mapGetters, mapState} from "vuex";
 
 export default {
   name: "Info",
@@ -31,6 +33,45 @@ export default {
     StatsInfo,
     FrequentlyUsedCharacter,
   },
+  data() {
+    return {
+      isAnimating: false, // 트랜지션 진행 여부를 추적하는 변수
+    };
+  },
+  computed: {
+    ...mapState(["playerStats", "selectedCharacterIndex"]),
+    ...mapGetters(["selectedCharacterStats", "formattedSelectedCharacterNumber"]),
+  },
+  methods: {
+    animateBox() {
+      if (this.isAnimating) return; // 이미 트랜지션 중이면 새로운 애니메이션 무시
+      this.isAnimating = true; // 트랜지션 시작
+
+      const box = this.$refs.animatedDiv;
+      // 1. 투명도가 0으로 한 후, 오른쪽으로 2배 이동 (왼쪽 이동의 2배) 및 이미지 변경
+      box.style.transition = 'none'; // transition을 잠깐 비활성화
+      box.style.opacity = '0'; // 투명도 복구
+      box.style.transform = 'translateX(50px)'; // 오른쪽으로 2배 이동
+      // 2. 다시 원래 위치로 복구하면서 투명도를 1로 복구
+      setTimeout(() => {
+        box.style.transition = 'all 1s'; // 다시 트랜지션 활성화
+        box.style.transform = 'translateX(0px) scale(1.1)'; // 원래 위치로 복귀
+        box.style.opacity = '1'; // 투명도 복구
+      }, 0); // 오른쪽으로 이동한 후 원래 위치로 돌아오기 시작하는 시간
+      // 트랜지션이 끝났을 때 다시 새로운 트랜지션을 허용
+      setTimeout(() => {
+        this.isAnimating = false; // 트랜지션 완료 후 플래그 해제
+      }, 0); // 전체 애니메이션이 끝나는 시간 (1초 + 1.1초)
+    },
+
+  },
+  watch: {
+    selectedCharacterIndex() {
+      this.animateBox(); // 상태가 true로 바뀌면 애니메이션 실행
+    }
+  },
+  mounted() {
+  }
 };
 </script>
 
@@ -53,13 +94,26 @@ export default {
   box-shadow: 0 0 4px 1px #00000040;
 }
 
+.image-container {
+  position: absolute;
+  top: -15vh;
+  width: 100vw; /* 화면 너비 */
+  height: 100vh; /* 화면 높이 */
+  /*overflow: hidden; /* 이미지를 화면 밖으로 넘기지 않음 */
+  opacity: 1;
+  transition: all 1s; /* 기본 transition 설정 */
+  cursor: pointer;
+}
+
 .character-image {
   position: absolute;
-  top: -25vh;
-  right: -20vw;
-  width: 75vw;
-  height: auto;
-  object-fit: cover;
+  top: 0%; /* 상단에 위치 */
+  right: -3%; /* 우측에 위치 */
+  height: 100%; /* 이미지의 높이를 화면에 맞춤 */
+  width: auto; /* 비율을 유지하면서 너비를 자동으로 조정 */
+  object-fit: cover; /* 비율을 유지하며 맞춤 */
+  transform: scale(1.1); /* 이미지를 10% 확대 */
+  transform-origin: top right; /* 확대할 때 우측 상단을 기준으로 */
 }
 
 .player-header-cover {
@@ -91,13 +145,15 @@ export default {
   align-items: end;
   flex-direction: row;
   width: 100%;
-  gap: 2%
+  gap: 2%;
+  justify-content: flex-start; /* 수평 방향 정렬: 필요에 따라 수정 가능 */
+  align-items: flex-end; /* 수직 방향으로 하단 정렬 */
 }
 
 .info .player-name h1 {
   color: #000000;
   font-family: var(--noto-sans-kr-font-style-bold);
-  font-size: 5vw;
+  font-size: 4.5rem;
   font-style: normal;
   font-weight: var(--noto-sans-kr-font-style-bold);
   white-space: nowrap;

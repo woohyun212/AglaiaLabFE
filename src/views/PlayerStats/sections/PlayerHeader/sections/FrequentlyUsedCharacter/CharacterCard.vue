@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import {mapGetters, mapState} from "vuex";
+
 export default {
   name: "CharacterCard",
   props: {
@@ -14,21 +16,19 @@ export default {
       type: Boolean,
       default: false
     },
-    characterName:{
-      type: String,
+    characterCode:{
+      type: Number,
       required: true
     } ,
-    characterImageUrl:{
-      type: String,
-      required: true
-    }
   },
   computed: {
+    ...mapState(["playerStats"]),
     backgroundStyle() {
+      const characterCode = this.characterCode.toString().padStart(3, '0');
       return {
-        backgroundImage: `url(${this.$ERCDN}/${this.characterImageUrl})`
+        backgroundImage: `url(${this.$ERCDN}/Character/${characterCode}/1${characterCode}000/mini.png`
       };
-    }
+    },
   }
 }
 </script>
