@@ -3,7 +3,7 @@
     <div class="player-info-subtitle">자주 사용하는 실험체</div>
     <ol class="character-list">
       <CharacterCard
-          v-for="(item, index) in items"
+          v-for="(item, index) in characterStats"
           :character-name="item.characterName"
           :character-image-url="item.characterImageUrl"
           :key="index"
@@ -11,9 +11,9 @@
           @click="updateSelectedCharacterIndex(index)"
       />
     </ol>
-    <CharacterRouteInfo :best-weapon="items[selectedCharacterIndex].bestWeapon" :tactical-skill-group="items[selectedCharacterIndex].tacticalSkillGroup"
-                        :trait-first-core="items[selectedCharacterIndex].traitFirstCore" :trait-first-sub="items[selectedCharacterIndex].traitFirstSub"
-                        :trait-second-sub="items[selectedCharacterIndex].traitSecondSub"/>
+    <CharacterRouteInfo :best-weapon="characterStats[selectedCharacterIndex].bestWeapon" :tactical-skill-group="characterStats[selectedCharacterIndex].tacticalSkillGroup"
+                        :trait-first-core="characterStats[selectedCharacterIndex].traitFirstCore" :trait-first-sub="characterStats[selectedCharacterIndex].traitFirstSub"
+                        :trait-second-sub="characterStats[selectedCharacterIndex].traitSecondSub"/>
   </div>
 </template>
 
@@ -27,11 +27,9 @@ import {mapActions, mapGetters, mapMutations, mapState} from "vuex";
 export default {
   name: "FrequentlyUsedCharacter",
   components: {CharacterRouteInfo, CharacterCard},
-  data() {
-    return {};
-  },
+
   computed:{
-    ...mapState(["items"]),
+    ...mapState(["characterStats"]),
     ...mapGetters(["selectedCharacterIndex"]),
   },
   methods: {

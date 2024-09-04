@@ -2,22 +2,30 @@
   <div class="stats-info">
     <RankOverview/>
     <hr/>
-    <Stats id="rank"/>
+    <Stats :stats-group="playerStats"/>
     <hr/>
     <h2 class="player-info-subtitle">실험체 통계</h2>
-    <Stats id="character"/>
+    <Stats :stats-group="selectedCharacterStats"/>
   </div>
 </template>
 
 <script>
 import RankOverview from "@/views/PlayerStats/sections/PlayerHeader/sections/StatsInfo/sections/RankOverview.vue";
 import Stats from "@/views/PlayerStats/sections/PlayerHeader/sections/StatsInfo/sections/Stats.vue";
-
+import {mapGetters, mapState} from "vuex";
 export default {
   name: "StatsInfo",
   components: {
     RankOverview,
     Stats,
+  },
+  data() {
+
+  },
+  computed: {
+    ...mapState(["playerStats"]),
+    ...mapGetters(["selectedCharacterIndex", "selectedCharacterStats"]),
+
   },
 };
 </script>

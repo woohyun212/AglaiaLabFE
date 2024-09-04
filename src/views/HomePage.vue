@@ -1,6 +1,9 @@
 <script>
+import PlayerStats from "@/views/PlayerStats.vue";
+
 export default {
   name: "HomePage",
+  components: {PlayerStats},
 
 }
 console.log()
@@ -9,7 +12,7 @@ console.log()
 <template>
   <div id="homepage">
     <h1 style="font-size: 100px">아핳 아글라이아 프로젝뚜우ㅜㅜㅜㅜㅜㅜㅜㅇ</h1>
-
+    <a style="font-size: 200px"href="/player-stats">player-stats</a>
 <!--    <img-->
 <!--        style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"-->
 <!--        src="https://cdn.w00.kr/ER/RankTier/Gold.png">-->

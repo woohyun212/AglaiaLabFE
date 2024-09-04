@@ -2,46 +2,49 @@
   <div class="stats">
     <div class="stat-block">
       <p>평균 TK</p>
-      <p>7.3</p>
+      <p>{{ statsGroup.averageTeamKills }}</p>
     </div>
     <div class="stat-block">
       <p>TOP 1</p>
-      <p>12.5%</p>
+      <p>{{ statsGroup.top1 }}</p>
     </div>
     <div class="stat-block">
       <p>게임 수</p>
-      <p>530</p>
+      <p>{{ statsGroup.totalGames }}</p>
     </div>
     <div class="stat-block">
       <p>평균 킬</p>
-      <p>7.3</p>
+      <p>{{ statsGroup.averageKills }}</p>
     </div>
     <div class="stat-block">
       <p>TOP 2</p>
-      <p>40.5%</p>
+      <p>{{ statsGroup.top2 }}</p>
     </div>
     <div class="stat-block">
       <p>평균 딜량</p>
-      <p>530</p>
+      <p>{{ statsGroup.averageDamage }}</p>
     </div>
     <div class="stat-block">
       <p>평균 어시</p>
-      <p>7.3</p>
+      <p>{{ statsGroup.averageAssistants }}</p>
     </div>
     <div class="stat-block">
       <p>TOP 3</p>
-      <p>99.5%</p>
+      <p>{{ statsGroup.top3 }}</p>
     </div>
     <div class="stat-block">
       <p>평균 순위</p>
-      <p>#1.2</p>
+      <p>{{ statsGroup.averageRank }}</p>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: "Stats",
+  props: ["statsGroup"],
+  methods:{},
 };
 </script>
 
