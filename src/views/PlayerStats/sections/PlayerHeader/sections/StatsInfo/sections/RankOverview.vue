@@ -3,7 +3,7 @@
     <p class="mmr">{{ playerStats.mmr }} RP</p>
     <div class="tier">
       <p>이터니티 - {{ playerStats.tireMmr }} RP</p>
-      <p>랭크 {{ playerStats.rank }}위 (상위 {{ playerStats.rankPercent }}%)</p>
+      <p>랭크 {{ playerStats.rank.toLocaleString() }}위 (상위 {{ playerStats.rankPercent }}%)</p>
     </div>
   </div>
 </template>

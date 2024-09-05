@@ -137,3 +137,154 @@ export const CHARACTER_NUMBER_TABLE = {
     74: "다르코",
     75: "르노어"
 }
+
+export const RANK_TIER_RP_TABLE = {
+    "Iron IV": {
+        "RP_Start": 0,
+        "KOR": "아이언 IV",
+        "bgColorCode": "#485467"
+    },
+    "Iron III": {
+        "RP_Start": 150,
+        "KOR": "아이언 III",
+        "bgColorCode": "#485467"
+    },
+    "Iron II": {
+        "RP_Start": 300,
+        "KOR": "아이언 II",
+        "bgColorCode": "#485467"
+    },
+    "Iron I": {
+        "RP_Start": 450,
+        "KOR": "아이언 I",
+        "bgColorCode": "#485467"
+    },
+
+    "Bronze IV": {
+        "RP_Start": 600,
+        "KOR": "브론즈 IV",
+        "bgColorCode": "#bc652c"
+    },
+    "Bronze III": {
+        "RP_Start": 800,
+        "KOR": "브론즈 III",
+        "bgColorCode": "#bc652c"
+    },
+    "Bronze II": {
+        "RP_Start": 1000,
+        "KOR": "브론즈 II",
+        "bgColorCode": "#bc652c"
+    },
+    "Bronze I": {
+        "RP_Start": 1200,
+        "KOR": "브론즈 I",
+        "bgColorCode": "#bc652c"
+    },
+
+    "Silver IV": {
+        "RP_Start": 1400,
+        "KOR": "실버 IV",
+        "bgColorCode": "#8295b3"
+    },
+    "Silver III": {
+        "RP_Start": 1650,
+        "KOR": "실버 III",
+        "bgColorCode": "#8295b3"
+    },
+    "Silver II": {
+        "RP_Start": 1900,
+        "KOR": "실버 II",
+        "bgColorCode": "#8295b3"
+    },
+    "Silver I": {
+        "RP_Start": 2150,
+        "KOR": "실버 I",
+        "bgColorCode": "#8295b3"
+    },
+
+    "Gold IV": {
+        "RP_Start": 2400,
+        "KOR": "골드 IV",
+        "bgColorCode": "#f3c719"
+    },
+    "Gold III": {
+        "RP_Start": 2700,
+        "KOR": "골드 III",
+        "bgColorCode": "#f3c719"
+    },
+    "Gold II": {
+        "RP_Start": 3000,
+        "KOR": "골드 II",
+        "bgColorCode": "#f3c719"
+    },
+    "Gold I": {
+        "RP_Start": 3300,
+        "KOR": "골드 I",
+        "bgColorCode": "#f3c719"
+    },
+
+    "Platinum IV": {
+        "RP_Start": 3600,
+        "KOR": "플래티넘 IV",
+        "bgColorCode": "#57d5ac"
+    },
+    "Platinum III": {
+        "RP_Start": 3950,
+        "KOR": "플래티넘 III",
+        "bgColorCode": "#57d5ac"
+    },
+    "Platinum II": {
+        "RP_Start": 4300,
+        "KOR": "플래티넘 II",
+        "bgColorCode": "#57d5ac"
+    },
+    "Platinum I": {
+        "RP_Start": 4650,
+        "KOR": "플래티넘 I",
+        "bgColorCode": "#57d5ac"
+    },
+
+    "Diamond IV": {
+        "RP_Start": 5000,
+        "KOR": "다이아몬드 IV",
+        "bgColorCode": "#9f8be4"
+    },
+    "Diamond III": {
+        "RP_Start": 5350,
+        "KOR": "다이아몬드 III",
+        "bgColorCode": "#9f8be4"
+    },
+    "Diamond II": {
+        "RP_Start": 5700,
+        "KOR": "다이아몬드 II",
+        "bgColorCode": "#9f8be4"
+    },
+    "Diamond I": {
+        "RP_Start": 6050,
+        "KOR": "다이아몬드 I",
+        "bgColorCode": "#9f8be4"
+    },
+
+    "Meteorite": {
+        "RP_Start": 6400,
+        "KOR": "메테오라이트",
+        "bgColorCode": "#6b8cf3"
+    },
+    "Mithril": {
+        "RP_Start": 6800,
+        "KOR": "미스릴",
+        "bgColorCode": "#88d6cd"
+    },
+
+    "Demigod": {
+        "RP_Start": "Top 700",
+        "KOR": "데미갓",
+        "bgColorCode": "#ffffd7",
+        "fontColorCode": "#9a7241"
+    },
+    "Eternity": {
+        "RP_Start": "Top 200",
+        "KOR": "이터니티",
+        "bgColorCode": "#ea70a9"
+    }
+}

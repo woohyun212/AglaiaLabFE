@@ -3,7 +3,7 @@
     <img
         class="rank-image"
         alt="Rank image group"
-        :src="`${$ERCDN}/RankTier/Immortal.png`"
+        :src="`${$ERCDN}/RankTier/${computedTier.split(' ')[0]}.png`"
     />
     <div class="blur-layer"/>
     <PlayerHeader/>
@@ -18,6 +18,7 @@
 import PlayerHeader from "@/views/PlayerStats/sections/PlayerHeader.vue";
 import Left from "@/views/PlayerStats/sections/Left.vue";
 import Right from "@/views/PlayerStats/sections/Right.vue";
+import {mapGetters} from "vuex";
 
 export default {
   name: "PlayerStats",
@@ -26,6 +27,9 @@ export default {
     Left,
     Right,
   },
+  computed:{
+  ...mapGetters(['computedTier']),
+  }
 };
 </script>
 
@@ -41,7 +45,7 @@ export default {
   height: fit-content;
   flex: 1;
   align-items: center;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 
@@ -68,6 +72,6 @@ export default {
   flex-direction: row;
   width: 67.5vw;
   margin-top: 10px;
-  gap:10px;
+  gap: 10px;
 }
 </style>

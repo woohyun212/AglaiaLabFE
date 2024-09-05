@@ -2,33 +2,52 @@
   <div class="rank-match-stats">
     <h2 class="sub-title">랭크 게임</h2>
     <p class="match-info-text">
+      <!--      TODO: 팀운 만들기 -->
       팀운 좋음<br/>
-      상위 0.01%
+      상위 {{ (Math.ceil(playerStats.rank / playerStats.rankSize * 10000) / 100).toFixed(2) }}%
     </p>
   </div>
   <hr/>
   <div class="rank-mmr-stats">
-    <img class="rank-icon" alt="Rank icon" :src="`${$ERCDN}/RankTier/Immortal.png`"/>
+    <img class="rank-icon" alt="Rank icon" :src="`${$ERCDN}/RankTier/${computedTier.split(' ')[0]}.png`"/>
     <div class="rank-info">
-      <p class="rank-info-pre"><span class="rank-tag">이터니티</span><span class="mmr-sub">10,301 RP</span></p>
-      <p class="rank-info-pre">승률 99.9 % <span class="mmr-sub">319승 12패</span></p>
+      <p class="rank-info-pre">
+        <span class="rank-tag" :style="{backgroundColor: RANK_TIER_RP_TABLE[rankTire].bgColorCode}">
+          <span :style="{color: RANK_TIER_RP_TABLE[rankTire].fontColorCode}">{{ rankTire }}</span></span>
+        <span class="mmr-sub">{{ playerStats.mmr.toLocaleString() }} RP</span></p>
+      <p class="rank-info-pre">승률 {{ (playerStats.totalWins / playerStats.totalGames * 100).toFixed(2) }} %
+        <span class="mmr-sub">{{ playerStats.totalWins }}승 {{ playerStats.totalGames - playerStats.totalWins }}패</span>
+      </p>
     </div>
   </div>
   <MMRChart/>
 </template>
 
 <script>
-import {Bar} from 'vue-chartjs'
+import {RANK_TIER_RP_TABLE} from '@/data'
 import MMRChart from "@/views/PlayerStats/sections/Left/sections/RankMMRStats/MMRChart.vue";
+import {mapGetters, mapState} from "vuex";
 
 export default {
   name: "RankMMRStats",
   components: {MMRChart},
+  computed: {
+    ...mapState(["playerStats"]),
+    ...mapGetters(['computedTier']),
+    rankTire() {
+      return this.computedTier;
+    },
+
+    RANK_TIER_RP_TABLE() {
+      console.log(RANK_TIER_RP_TABLE[this.rankTire])
+      return RANK_TIER_RP_TABLE
+    },
+  },
 };
 
 </script>
 
-<style >
+<style>
 .sub-title {
   color: #000000;
   font-family: "Noto Sans KR", Helvetica;
@@ -88,7 +107,6 @@ export default {
 
 .rank-tag {
   color: #ffffff;
-  background-color: #ea70a9;
   border-radius: 4px;
   padding: 1px 6px;
 }
