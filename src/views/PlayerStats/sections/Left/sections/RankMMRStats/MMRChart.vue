@@ -10,24 +10,29 @@ import {Chart, registerables} from 'chart.js';
 import 'chartjs-chart-financial';
 import 'chartjs-adapter-date-fns';
 import {CandlestickController, CandlestickElement} from 'chartjs-chart-financial';
+import {mapGetters, mapState} from "vuex";
 
 // Chart.js 등록
 Chart.register(...registerables, CandlestickElement, CandlestickController);
 
 export default {
   name: 'MMRChart',
+  computed:{
+    ...mapGetters(["mmrHistory"]),
+  },
   mounted() {
+    this.chartConfig.data.datasets[0].data = this.mmrHistory;
+    // this.chartConfig.data.datasets[0].data = this.getChartData()
     this.renderChart();
   },
   data() {
     return {
-      chart: null,
       chartConfig: {
         type: 'candlestick',
         data: {
           datasets: [{
             label: '',
-            data: this.getChartData(),
+            data: [], // chartdata
             barThickness: 25, // 봉의 고정된 너비를 설정
             maxBarThickness: 15, // 봉의 최대 너비를 제한
           }]

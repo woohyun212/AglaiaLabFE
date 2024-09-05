@@ -1,6 +1,7 @@
 <template>
   <div class="left">
     <RankMMRStats/>
+    <MMRChart/>
     <hr/>
     <FrequentlyUsedCharacterList />
   </div>
