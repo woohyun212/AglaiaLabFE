@@ -6,7 +6,7 @@ const store = createStore({
         state: {
             // 애플리케이션에서 관리할 상태
             selectedCharacterIndex: 0,
-            playerStats: {
+            playerStatsData: {
                 mmr: 6400,
                 nickname: "한계를뛰어넘는별",
                 rank: 1000,
@@ -188,21 +188,21 @@ const store = createStore({
         getters: {
             // PlayerHeader 에서 Character 이미지
             selectedCharacterIndex: state => state.selectedCharacterIndex,
-            selectedCharacterStats: state => state.playerStats.characterStats[state.selectedCharacterIndex],
-            formattedSelectedCharacterNumber: state => state.playerStats.characterStats[state.selectedCharacterIndex].characterCode.toString().padStart(3, '0'),
+            selectedCharacterStats: state => state.playerStatsData.characterStats[state.selectedCharacterIndex],
+            formattedSelectedCharacterNumber: state => state.playerStatsData.characterStats[state.selectedCharacterIndex].characterCode.toString().padStart(3, '0'),
 
             // 티어 표시
             computedTier: (state) => {
                 // 등수 먼저 계산
-                if (state.playerStats.rank <= 700) {
-                    const rank = state.playerStats.rank;
+                if (state.playerStatsData.rank <= 700) {
+                    const rank = state.playerStatsData.rank;
                     if (rank <= 200) {
                         return "Eternity"
                     }
                     return "Demigod";
                 } else {
                     // 700등 밖이면 mmr 로 계산
-                    const mmr = state.playerStats.mmr;
+                    const mmr = state.playerStatsData.mmr;
                     let currentRank = null;
                     let highestRP_Start = -Infinity;
 

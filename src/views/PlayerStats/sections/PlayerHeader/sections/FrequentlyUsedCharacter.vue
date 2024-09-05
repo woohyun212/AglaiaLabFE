@@ -3,7 +3,7 @@
     <div class="player-info-subtitle">자주 사용하는 실험체</div>
     <ol class="character-list">
       <CharacterCard
-          v-for="(item, index) in playerStats.characterStats"
+          v-for="(item, index) in playerStatsData.characterStats"
           :character-code="item.characterCode"
           :key="index"
           :isClicked="selectedCharacterIndex === index"
@@ -28,7 +28,7 @@ export default {
   components: {CharacterRouteInfo, CharacterCard},
 
   computed:{
-    ...mapState(["playerStats"]),
+    ...mapState(["playerStatsData"]),
     ...mapGetters(["selectedCharacterIndex","selectedCharacterStats"]),
   },
   methods: {

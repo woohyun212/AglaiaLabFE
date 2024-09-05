@@ -2,7 +2,7 @@
   <div class="stats-info">
     <RankOverview/>
     <hr/>
-    <Stats :stats-group="playerStats"/>
+    <Stats :stats-group="playerStatsData"/>
     <hr/>
     <h2 class="player-info-subtitle">실험체 통계</h2>
     <Stats :stats-group="selectedCharacterStats"/>
@@ -20,10 +20,10 @@ export default {
     Stats,
   },
   data() {
-
+    return {}
   },
   computed: {
-    ...mapState(["playerStats"]),
+    ...mapState(["playerStatsData"]),
     ...mapGetters(["selectedCharacterIndex", "selectedCharacterStats"]),
 
   },

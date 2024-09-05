@@ -6,7 +6,7 @@
     </div>
     <div class="player-header-cover"/>
     <div class="info">
-      <div class="player-name"><h1>{{ playerStats.nickname }}</h1>
+      <div class="player-name"><h1>{{ playerStatsData.nickname }}</h1>
         <ButtonWrapper/>
       </div>
       <div class="recent-update">최근 업데이트: 12일 전</div>
@@ -39,7 +39,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["playerStats", "selectedCharacterIndex"]),
+    ...mapState(["playerStatsData", "selectedCharacterIndex"]),
     ...mapGetters(["selectedCharacterStats", "formattedSelectedCharacterNumber"]),
   },
   methods: {

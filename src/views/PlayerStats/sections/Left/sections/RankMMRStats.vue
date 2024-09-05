@@ -4,7 +4,7 @@
     <p class="match-info-text">
       <!--      TODO: 팀운 만들기 -->
       팀운 좋음<br/>
-      상위 {{ (Math.ceil(playerStats.rank / playerStats.rankSize * 10000) / 100).toFixed(2) }}%
+      상위 {{ (Math.ceil(playerStatsData.rank / playerStatsData.rankSize * 10000) / 100).toFixed(2) }}%
     </p>
   </div>
   <hr/>
@@ -14,9 +14,11 @@
       <p class="rank-info-pre">
         <span class="rank-tag" :style="{backgroundColor: RANK_TIER_RP_TABLE[rankTire].bgColorCode}">
           <span :style="{color: RANK_TIER_RP_TABLE[rankTire].fontColorCode}">{{ rankTire }}</span></span>
-        <span class="mmr-sub">{{ playerStats.mmr.toLocaleString() }} RP</span></p>
-      <p class="rank-info-pre">승률 {{ (playerStats.totalWins / playerStats.totalGames * 100).toFixed(2) }} %
-        <span class="mmr-sub">{{ playerStats.totalWins }}승 {{ playerStats.totalGames - playerStats.totalWins }}패</span>
+        <span class="mmr-sub">{{ playerStatsData.mmr.toLocaleString() }} RP</span></p>
+      <p class="rank-info-pre">승률 {{ (playerStatsData.totalWins / playerStatsData.totalGames * 100).toFixed(2) }} %
+        <span class="mmr-sub">{{ playerStatsData.totalWins }}승 {{
+            playerStatsData.totalGames - playerStatsData.totalWins
+          }}패</span>
       </p>
     </div>
   </div>
@@ -32,14 +34,13 @@ export default {
   name: "RankMMRStats",
   components: {MMRChart},
   computed: {
-    ...mapState(["playerStats"]),
+    ...mapState(["playerStatsData"]),
     ...mapGetters(['computedTier']),
     rankTire() {
       return this.computedTier;
     },
 
     RANK_TIER_RP_TABLE() {
-      console.log(RANK_TIER_RP_TABLE[this.rankTire])
       return RANK_TIER_RP_TABLE
     },
   },

@@ -1,9 +1,9 @@
 <template>
   <div class="rank-overview">
-    <p class="mmr">{{ playerStats.mmr }} RP</p>
+    <p class="mmr">{{ playerStatsData.mmr }} RP</p>
     <div class="tier">
-      <p>이터니티 - {{ playerStats.tireMmr }} RP</p>
-      <p>랭크 {{ playerStats.rank.toLocaleString() }}위 (상위 {{ playerStats.rankPercent }}%)</p>
+      <p>이터니티 - {{ playerStatsData.tireMmr }} RP</p>
+      <p>랭크 {{ playerStatsData.rank.toLocaleString() }}위 (상위 {{ playerStatsData.rankPercent }}%)</p>
     </div>
   </div>
 </template>
@@ -14,7 +14,7 @@ import {mapState} from "vuex";
 export default {
   name: "RankOverview",
   computed: {
-    ...mapState(["playerStats"]),
+    ...mapState(["playerStatsData"]),
   }
 };
 </script>

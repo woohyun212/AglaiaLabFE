@@ -22,7 +22,7 @@ export default {
     } ,
   },
   computed: {
-    ...mapState(["playerStats"]),
+    ...mapState(["playerStatsData"]),
     backgroundStyle() {
       const characterCode = this.characterCode.toString().padStart(3, '0');
       return {
