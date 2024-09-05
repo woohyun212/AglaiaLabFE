@@ -2,20 +2,20 @@
   <div class="player-header">
     <div class="image-container">
       <img ref="animatedDiv" class="character-image"
-           :src="`${$ERCDN}/Character/${ formattedSelectedCharacterNumber }/${ selectedCharacterStats.mostUsedSkinCode }/full.png`"
-           style=""/>
+           :src="`${$ERCDN}/Character/${ formattedSelectedCharacterNumber }/${ selectedCharacterStats.mostUsedSkinCode }/full.png`"/>
     </div>
     <div class="player-header-cover"/>
     <div class="info">
       <div class="player-name"><h1>{{ playerStats.nickname }}</h1>
         <ButtonWrapper/>
       </div>
+      <div class="recent-update">최근 업데이트: 12일 전</div>
       <div style="display: flex; flex-direction: row;width: 100%;height: 100%;">
         <StatsInfo/>
         <FrequentlyUsedCharacter/>
       </div>
 
-      <div class="recent-update">최근 업데이트: 12일 전</div>
+<!--      <div class="recent-update">최근 업데이트: 12일 전</div>-->
     </div>
   </div>
 </template>
@@ -102,7 +102,6 @@ export default {
   /*overflow: hidden; /* 이미지를 화면 밖으로 넘기지 않음 */
   opacity: 1;
   transition: all 1s; /* 기본 transition 설정 */
-  cursor: pointer;
 }
 
 .character-image {
