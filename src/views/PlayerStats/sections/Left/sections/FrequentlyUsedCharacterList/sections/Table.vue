@@ -12,7 +12,7 @@
       </thead>
       <tbody>
       <TableTr
-          v-for="stat in frequentlyUsedCharacterStats"
+          v-for="stat in this.playerStatsData.characterStats"
           :stat="stat"
       />
       <!-- 반복 -->
@@ -24,6 +24,7 @@
 <script>
 import TableTr
   from "@/views/PlayerStats/sections/Left/sections/FrequentlyUsedCharacterList/sections/TableTr.vue";
+import {mapState} from "vuex";
 
 export default {
   name: "Table",
@@ -33,56 +34,27 @@ export default {
       frequentlyUsedCharacterStats: [
         {
           name: "데비&마를렌",
-          playedCount: 123,
-          winRate: 12.51,
           earnedRP: 5000,
-          averageTK: 7.2,
-          averageK: 5.2,
-          averageDamage: 23051,
-        }, {
-          name: "캐릭터이름",
-          playedCount: 123,
-          winRate: 12.51,
-          earnedRP: 5000,
-          averageTK: 7.2,
-          averageK: 5.2,
-          averageDamage: 23051,
-        }, {
-          name: "캐릭터이름",
-          playedCount: 123,
-          winRate: 12.51,
-          earnedRP: 5000,
-          averageTK: 7.2,
-          averageK: 5.2,
-          averageDamage: 23051,
-        }, {
-          name: "캐릭터이름",
-          playedCount: 123,
-          winRate: 12.51,
-          earnedRP: 5000,
-          averageTK: 7.2,
-          averageK: 5.2,
-          averageDamage: 23051,
-        }, {
-          name: "캐릭터이름",
-          playedCount: 123,
-          winRate: 12.51,
-          earnedRP: 5000,
-          averageTK: 7.2,
-          averageK: 5.2,
-          averageDamage: 23051,
-        }, {
-          name: "캐릭터이름",
-          playedCount: 123,
-          winRate: 12.51,
-          earnedRP: 5000,
-          averageTK: 7.2,
-          averageK: 5.2,
-          averageDamage: 23051,
-        }
+
+          characterCode: 1,
+          averageTeamKills: 1.2,
+          averageKills: 3.4,
+          averageAssistants: 5,
+
+          top1: 6.07,
+          top2: 8.09,
+          top3: 10.01,
+
+          totalGames: 23,
+          averageDamage: 45678,
+          averageRank: 1.23,
+        },
       ]
     }
-  }
+  },
+  computed:{
+    ...mapState(["playerStatsData"]),
+  },
 };
 </script>
 

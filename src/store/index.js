@@ -6,10 +6,11 @@ const store = createStore({
         state: {
             // 애플리케이션에서 관리할 상태
             selectedCharacterIndex: 0,
+
             playerStatsData: {
-                mmr: 6400,
-                nickname: "한계를뛰어넘는별",
-                rank: 1000,
+                mmr: 12345,
+                nickname: "아글라이아",
+                rank: 200,
                 rankSize: 216619,
                 rankPercent: 0.02,
                 tireMmr: 2202, // 만들어야함
@@ -27,150 +28,6 @@ const store = createStore({
                 totalWins: 52,
                 averageDamage: 32142, // userGames 테이블에서 쿼리를 해서 가져와야할 듯
                 averageRank: 9.36,
-
-                characterStats: [ // items 배열
-                    {
-                        characterCode: 1,
-                        // characterName: "Jackie",
-                        mostUsedSkinCode: 1001004,
-                        bestWeapon: 13,  // 무기
-                        tacticalSkillGroup: 70, // 전술 스킬
-                        traitFirstCore: 7000401, // 주특
-                        traitFirstSub: [
-                            7010311,
-                            7011001
-                        ],
-                        traitSecondSub: [ // 보조 특성
-                            7110101,
-                            7110401
-                        ],
-
-                        averageTeamKills: 1.2,
-                        averageKills: 3.4,
-                        averageAssistants: 5,
-
-                        top1: 6.07,
-                        top2: 8.09,
-                        top3: 10.01,
-
-                        totalGames: 23,
-                        averageDamage: 45678,
-                        averageRank: 1.23,
-
-                    },
-                    {
-                        characterCode: 2,
-                        // characterName: "Aya",
-                        mostUsedSkinCode: 1002004,
-                        bestWeapon: 10,  // 무기
-                        tacticalSkillGroup: 30, // 전술 스킬
-                        traitFirstCore: 7000501, // 주특
-                        traitFirstSub: [
-                            7310201,
-                            7310101
-                        ],
-                        traitSecondSub: [ // 보조 특성
-                            7211101,
-                            7210801
-                        ],
-
-                        averageTeamKills: 4.5,
-                        averageKills: 6.7,
-                        averageAssistants: 8.9,
-
-                        top1: 10.09,
-                        top2: 8.07,
-                        top3: 6.54,
-
-                        totalGames: 321,
-                        averageDamage: 10987,
-                        averageRank: 9.36,
-                    },
-                    {
-                        characterCode: 7,
-                        // characterName: "Hyunwoo",
-                        mostUsedSkinCode: 1007003,
-                        bestWeapon: 1,  // 무기
-                        tacticalSkillGroup: 30, // 전술 스킬
-                        traitFirstCore: 7100501, // 주특
-                        traitFirstSub: [
-                            7111001,
-                            7110601
-                        ],
-                        traitSecondSub: [ // 보조 특성
-                            7010601,
-                            7011001
-                        ],
-
-                        averageTeamKills: 9.2,
-                        averageKills: 4.5,
-                        averageAssistants: 2.4,
-
-                        top1: 11.22,
-                        top2: 44.33,
-                        top3: 55.66,
-
-                        totalGames: 77,
-                        averageDamage: 88888,
-                        averageRank: 9.99,
-                    },
-                    {
-                        characterCode: 4,
-                        // characterName: "Magnus",
-                        mostUsedSkinCode: 1004002,
-                        bestWeapon: 3,  // 무기
-                        tacticalSkillGroup: 120, // 전술 스킬
-                        traitFirstCore: 7200201, // 주특
-                        traitFirstSub: [
-                            7210101,
-                            7210801
-                        ],
-                        traitSecondSub: [ // 보조 특성
-                            7110101,
-                            7110401
-                        ],
-
-                        averageTeamKills: 6.2,
-                        averageKills: 4.5,
-                        averageAssistants: 2.4,
-
-                        top1: 22.22,
-                        top2: 33.33,
-                        top3: 44.44,
-
-                        totalGames: 55,
-                        averageDamage: 123,
-                        averageRank: 2.12,
-                    },
-                    {
-                        characterCode: 67,
-                        // characterName: "Fiora",
-                        mostUsedSkinCode: 1067002,
-                        bestWeapon: 13,  // 무기
-                        tacticalSkillGroup: 130, // 전술 스킬
-                        traitFirstCore: 7100201, // 주특
-                        traitFirstSub: [
-                            7110101,
-                            7110401
-                        ],
-                        traitSecondSub: [ // 보조 특성
-                            7010701,
-                            7310301
-                        ],
-
-                        averageTeamKills: 1.2,
-                        averageKills: 4.3,
-                        averageAssistants: 7.2,
-
-                        top1: 33.33,
-                        top2: 44.44,
-                        top3: 11.22,
-
-                        totalGames: 99,
-                        averageDamage: 3256,
-                        averageRank: 3.2,
-                    }
-                ],
 
                 mmrHistory: [
                     {
@@ -244,6 +101,155 @@ const store = createStore({
                         "x": 1725321600000
                     }
                 ],
+
+                characterStats: [ // 10개 까지
+                    {
+                        characterCode: 1,
+                        mostUsedSkinCode: 1001004,
+                        bestWeapon: 13,  // 무기
+                        tacticalSkillGroup: 70, // 전술 스킬
+                        traitFirstCore: 7000401, // 주특
+                        traitFirstSub: [
+                            7010311,
+                            7011001
+                        ],
+                        traitSecondSub: [ // 보조 특성
+                            7110101,
+                            7110401
+                        ],
+
+                        averageTeamKills: 1.2,
+                        averageKills: 3.4,
+                        averageAssistants: 5,
+
+                        top1: 6.07,
+                        top2: 8.09,
+                        top3: 10.01,
+
+                        totalGames: 23,
+                        averageDamage: 45678,
+                        averageRank: 1.23,
+
+                        earnedRP: 3000,
+                    },
+                    {
+                        characterCode: 2,
+                        mostUsedSkinCode: 1002004,
+                        bestWeapon: 10,  // 무기
+                        tacticalSkillGroup: 30, // 전술 스킬
+                        traitFirstCore: 7000501, // 주특
+                        traitFirstSub: [
+                            7310201,
+                            7310101
+                        ],
+                        traitSecondSub: [ // 보조 특성
+                            7211101,
+                            7210801
+                        ],
+
+                        averageTeamKills: 4.5,
+                        averageKills: 6.7,
+                        averageAssistants: 8.9,
+
+                        top1: 10.09,
+                        top2: 8.07,
+                        top3: 6.54,
+
+                        totalGames: 321,
+                        averageDamage: 10987,
+                        averageRank: 9.36,
+
+                        earnedRP: 2000,
+                    },
+                    {
+                        characterCode: 7,
+                        mostUsedSkinCode: 1007003,
+                        bestWeapon: 1,  // 무기
+                        tacticalSkillGroup: 30, // 전술 스킬
+                        traitFirstCore: 7100501, // 주특
+                        traitFirstSub: [
+                            7111001,
+                            7110601
+                        ],
+                        traitSecondSub: [ // 보조 특성
+                            7010601,
+                            7011001
+                        ],
+
+                        averageTeamKills: 9.2,
+                        averageKills: 4.5,
+                        averageAssistants: 2.4,
+
+                        top1: 11.22,
+                        top2: 44.33,
+                        top3: 55.66,
+
+                        totalGames: 77,
+                        averageDamage: 88888,
+                        averageRank: 9.99,
+
+                        earnedRP: 1000,
+                    },
+                    {
+                        characterCode: 4,
+                        mostUsedSkinCode: 1004002,
+                        bestWeapon: 3,  // 무기
+                        tacticalSkillGroup: 120, // 전술 스킬
+                        traitFirstCore: 7200201, // 주특
+                        traitFirstSub: [
+                            7210101,
+                            7210801
+                        ],
+                        traitSecondSub: [ // 보조 특성
+                            7110101,
+                            7110401
+                        ],
+
+                        averageTeamKills: 6.2,
+                        averageKills: 4.5,
+                        averageAssistants: 2.4,
+
+                        top1: 22.22,
+                        top2: 33.33,
+                        top3: 44.44,
+
+                        totalGames: 55,
+                        averageDamage: 123,
+                        averageRank: 2.12,
+
+                        earnedRP: 500,
+                    },
+                    {
+                        characterCode: 67,
+                        mostUsedSkinCode: 1067002,
+                        bestWeapon: 13,  // 무기
+                        tacticalSkillGroup: 130, // 전술 스킬
+                        traitFirstCore: 7100201, // 주특
+                        traitFirstSub: [
+                            7110101,
+                            7110401
+                        ],
+                        traitSecondSub: [ // 보조 특성
+                            7010701,
+                            7310301
+                        ],
+
+                        averageTeamKills: 1.2,
+                        averageKills: 4.3,
+                        averageAssistants: 7.2,
+
+                        top1: 33.33,
+                        top2: 44.44,
+                        top3: 11.22,
+
+                        totalGames: 99,
+                        averageDamage: 3256,
+                        averageRank: 3.2,
+
+                        earnedRP: 100
+                    }
+                ],
+
 
             }
         },

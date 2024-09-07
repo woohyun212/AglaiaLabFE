@@ -3,21 +3,21 @@
     <RankMMRStats/>
     <MMRChart/>
     <hr/>
-    <FrequentlyUsedCharacterList />
+    <Most10CharacterList />
   </div>
 </template>
 
 <script>
 import RankMMRStats from "./Left/sections/RankMMRStats.vue";
-import FrequentlyUsedCharacterList from "./Left/sections/FrequentlyUsedCharacterList.vue";
 import MMRChart from "@/views/PlayerStats/sections/Left/sections/RankMMRStats/MMRChart.vue";
+import Most10CharacterList from "./Left/sections/Most10CharacterList.vue";
 
 export default {
   name: "Left",
   components: {
     MMRChart,
     RankMMRStats,
-    FrequentlyUsedCharacterList,
+    Most10CharacterList,
   },
 };
 </script>

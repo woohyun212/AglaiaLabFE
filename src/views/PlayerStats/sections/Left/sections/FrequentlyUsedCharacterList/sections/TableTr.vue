@@ -1,7 +1,18 @@
 <script>
+import {CHARACTER_NUMBER_TABLE} from '@/data'
   export default {
     name: 'TableTr',
     props:['stat'],
+    computed:{
+      getCharacterName(){
+        return CHARACTER_NUMBER_TABLE[this.stat.characterCode]
+      },
+      getCharacterBasicImage(){
+        const formattedCode = this.stat.characterCode.toString().padStart(3,'0');
+        console.log(formattedCode)
+        return `${this.$ERCDN}/Character/${formattedCode}/1${formattedCode}000/mini.png`
+      }
+    }
   }
 </script>
 
@@ -11,20 +22,20 @@
         <div class="character-box">
           <div class="image-wrapper">
             <img class="character-img" alt="character-img"
-                 :src="`${$ERCDN}/Character/065/1065000/mini.png`"/>
+                 :src="getCharacterBasicImage"/>
           </div>
           <div class="character-play-info">
-            <p>{{ stat.name }}</p>
-            <p>{{ stat.playedCount }}게임</p>
+            <p>{{ getCharacterName }}</p>
+            <p>{{ stat.totalGames }}게임</p>
           </div>
         </div>
       </td>
-      <td>{{ stat.winRate }}</td>
+      <td>{{ stat.top1 }}</td>
       <td>{{ stat.earnedRP }}</td>
       <td>
         <div>
-          <div>TK {{ stat.averageTK }}</div>
-          <div>K {{ stat.averageK }}</div>
+          <div>TK {{ stat.averageTeamKills }}</div>
+          <div>K {{ stat.averageKills }}</div>
         </div>
       </td>
       <td>{{ stat.averageDamage }}</td>

@@ -9,13 +9,13 @@
       <div class="player-name"><h1>{{ playerStatsData.nickname }}</h1>
         <ButtonWrapper/>
       </div>
-      <div class="recent-update">최근 업데이트: 12일 전</div>
+<!--      <div class="recent-update">최근 업데이트: 12일 전</div>-->
       <div style="display: flex; flex-direction: row;width: 100%;height: 100%;">
         <StatsInfo/>
         <FrequentlyUsedCharacter/>
       </div>
 
-<!--      <div class="recent-update">최근 업데이트: 12일 전</div>-->
+      <div class="recent-update">최근 업데이트: 12일 전</div>
     </div>
   </div>
 </template>
@@ -55,7 +55,7 @@ export default {
       // 2. 다시 원래 위치로 복구하면서 투명도를 1로 복구
       setTimeout(() => {
         box.style.transition = 'all 1s'; // 다시 트랜지션 활성화
-        box.style.transform = 'translateX(0px) scale(1.1)'; // 원래 위치로 복귀
+        box.style.transform = 'translateX(0px) scale(1.4)'; // 원래 위치로 복귀
         box.style.opacity = '1'; // 투명도 복구
       }, 0); // 오른쪽으로 이동한 후 원래 위치로 돌아오기 시작하는 시간
       // 트랜지션이 끝났을 때 다시 새로운 트랜지션을 허용
@@ -159,9 +159,9 @@ export default {
 }
 
 .info .recent-update {
-  color: #898989;
+  color: #555555;
   font-family: var(--noto-sans-kr-font-family);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 0;
   white-space: nowrap;

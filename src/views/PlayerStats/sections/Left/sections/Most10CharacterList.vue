@@ -1,6 +1,6 @@
 <template>
-  <div class="frequently-used-character-list">
-    <h2 class="sub-title">자주 사용한 실험체</h2>
+  <div class="most-10-character-list">
+    <h2 class="sub-title">모스트 10 실험체</h2>
     <Table />
   </div>
 </template>
@@ -9,7 +9,7 @@
 import Table from "@/views/PlayerStats/sections/Left/sections/FrequentlyUsedCharacterList/sections/Table.vue";
 
 export default {
-  name: "FrequentlyUsedCharacterList",
+  name: "Most10CharacterList",
   components: {
     Table,
   },
@@ -18,7 +18,7 @@ export default {
 
 
 <style>
-.frequently-used-character-list {
+.most-10-character-list {
   display: flex;
   flex-direction: column;
   width: 100%;
