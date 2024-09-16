@@ -10,9 +10,11 @@
           @click="updateSelectedCharacterIndex(index)"
       />
     </ol>
-    <CharacterRouteInfo :best-weapon="selectedCharacterStats.bestWeapon" :tactical-skill-group="selectedCharacterStats.tacticalSkillGroup"
-                        :trait-first-core="selectedCharacterStats.traitFirstCore" :trait-first-sub="selectedCharacterStats.traitFirstSub"
-                        :trait-second-sub="selectedCharacterStats.traitSecondSub"/>
+    <CharacterRouteInfo :weapon="selectedCharacterStats.mostWeapon"
+                        :tactical-skill-group="selectedCharacterStats.mostTacticalSkillGroup"
+                        :trait-first-core="selectedCharacterStats.mostTraitFirstCore"
+                        :trait-first-sub="selectedCharacterStats.mostTraitFirstSub"
+                        :trait-second-sub="selectedCharacterStats.mostTraitSecondSub"/>
   </div>
 </template>
 
@@ -27,9 +29,9 @@ export default {
   name: "FrequentlyUsedCharacter",
   components: {CharacterRouteInfo, CharacterCard},
 
-  computed:{
+  computed: {
     ...mapState(["playerStatsData"]),
-    ...mapGetters(["selectedCharacterIndex","selectedCharacterStats"]),
+    ...mapGetters(["selectedCharacterIndex", "selectedCharacterStats"]),
   },
   methods: {
     ...mapActions(["updateSelectedCharacterIndex"]),

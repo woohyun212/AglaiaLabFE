@@ -9,7 +9,12 @@ import PlayerStats from '../views/PlayerStats.vue'
 
 const routes = [
   { path: '/', component: HomePage },
-  { path: '/player-stats', component: PlayerStats },
+  {
+    path: '/player-stats/:nickname', // 검색된 플레이어 통계 페이지
+    name: 'PlayerStats',
+    component: PlayerStats,
+    props: true, // 라우트 파라미터를 컴포넌트로 전달
+  },
   // { path: '/leaderboard', component: Leaderboard },
   // { path: '/match-history', component: MatchHistory },
   // { path: '/character-builds', component: CharacterBuilds },

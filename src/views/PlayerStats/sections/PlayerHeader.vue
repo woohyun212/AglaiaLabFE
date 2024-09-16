@@ -6,7 +6,7 @@
     </div>
     <div class="player-header-cover"/>
     <div class="info">
-      <div class="player-name"><h1>{{ playerStatsData.nickname }}</h1>
+      <div class="player-name"><h1>{{ playerStatsData.player.nickname }}</h1>
         <ButtonWrapper/>
       </div>
 <!--      <div class="recent-update">최근 업데이트: 12일 전</div>-->
@@ -107,7 +107,7 @@ export default {
 .character-image {
   position: absolute;
   top: 0%; /* 상단에 위치 */
-  right: -3%; /* 우측에 위치 */
+  right: -15%; /* 우측에 위치 */
   height: 100%; /* 이미지의 높이를 화면에 맞춤 */
   width: auto; /* 비율을 유지하면서 너비를 자동으로 조정 */
   object-fit: cover; /* 비율을 유지하며 맞춤 */

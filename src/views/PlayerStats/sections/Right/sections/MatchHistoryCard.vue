@@ -5,7 +5,7 @@
         <GameInfo :game-rank="gameRank" :matching-mode="matchingMode" :play-time="playTime" :start-dtm="startDtm"
                   :escape-state="escapeState"/>
         <GameCharacterInfo :character-level="characterLevel" :character-num="characterNum" :skin-code="skinCode"/>
-        <GameWeaponTacticSkillTrait :best-weapon="bestWeapon" :tactical-skill-group="tacticalSkillGroup"
+        <GameWeaponTacticSkillTrait :best-weapon="mostWeapon" :tactical-skill-group="tacticalSkillGroup"
                                     :trait-first-core="traitFirstCore" :trait-first-sub="traitFirstSub"
                                     :trait-second-sub="traitSecondSub"/>
         <GameInfoDetail :team-kill="teamKill" :player-kill="playerKill" :player-assistant="playerAssistant"
@@ -75,7 +75,7 @@ export default {
 
       // gameWeaponTacticSkillTrait
 
-      bestWeapon: 3,  // 무기
+      mostWeapon: 3,  // 무기
       tacticalSkillGroup: 120, // 전술 스킬
       traitFirstCore: 7200501, // 주특
       traitFirstSub: [

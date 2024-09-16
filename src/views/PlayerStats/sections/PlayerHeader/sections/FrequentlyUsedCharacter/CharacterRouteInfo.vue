@@ -15,7 +15,7 @@
       <div class="trait-box">
         <div class="weapon-tactic-skill trait-line">
           <img class="weapon" alt="weapon"
-               :src="`${$ERCDN}/WeaponGroup/${ bestWeapon.toString().padStart(2, '0') }.png`"/>
+               :src="`${$ERCDN}/WeaponGroup/${ weapon.toString().padStart(2, '0') }.png`"/>
           <img class="tactic-skill" alt="tactic-skill"
                :src="`${$ERCDN}/TacticSkill/${ tacticalSkillGroup }.png`"/>
         </div>
@@ -35,10 +35,7 @@ import {TRAIT_GROUP, TRAIT_TABLE} from '@/data'
 
 export default {
   name: "CharacterRouteInfo",
-  props: ["bestWeapon", "tacticalSkillGroup", "traitFirstCore", "traitFirstSub", "traitSecondSub"],
-  data() {
-    return {}
-  },
+  props: ["weapon", "tacticalSkillGroup", "traitFirstCore", "traitFirstSub", "traitSecondSub"],
   computed: {
     getTraitFirstGroup() {
       return TRAIT_GROUP[TRAIT_TABLE[this.traitFirstCore]];

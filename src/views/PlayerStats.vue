@@ -8,8 +8,8 @@
     <div class="blur-layer"/>
     <PlayerHeader/>
     <div class="under-section">
-      <Left/>
-      <Right/>
+<!--      <Left/>-->
+<!--      <Right/>-->
     </div>
   </div>
 </template>
@@ -27,9 +27,14 @@ export default {
     Left,
     Right,
   },
-  computed:{
-  ...mapGetters(['computedTier']),
-  }
+  props: ['nickname'], // 라우터 파라미터를 받음
+  computed: {
+    ...mapGetters(['computedTier']),
+    ...mapGetters(['allData']), // Vuex에서 데이터를 가져오기
+  },
+  created() {
+    this.$store.dispatch('fetchData', this.nickname); // 컴포넌트 생성 시 API 요청 실행
+  },
 };
 </script>
 
